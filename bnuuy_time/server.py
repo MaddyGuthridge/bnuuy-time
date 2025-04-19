@@ -18,22 +18,34 @@ def bnuuy_time(time: datetime):
     bun = find_matching_bun(time)
 
     if bun is None:
-        return "No matching buns :("
+        return f"No matching buns at {t} :("
 
-    name = bun['name']
+    name = bun["name"]
     if name is None:
         name = random.choice(["Bun", "Bunny", "Bnuuy"])
+
+    # Credits
+    source = bun["source"]
+    credits = p.a(href=source["url"], target="_blank")(
+        f"{source['author']} on {source['platform']}",
+    )
 
     return str(
         p.html(
             p.head(
-                p.link(rel="stylesheet", src="/static/style.css"),
+                p.link(rel="stylesheet", href="/static/style.css"),
             ),
             p.body(
-                p.h1(f"{name} says that it is {t}"),
                 p.img(
+                    id="bun-img",
                     src=f"/static/buns/{bun['filename']}",
                     alt=f"{name}'s ears are telling the time like an analog clock, and say that the time is {t}",
+                ),
+                p.div(class_="center")(
+                    p.main(
+                        p.h1(f"{name} says that it is {t}"),
+                        credits,
+                    ),
                 ),
             ),
         )
