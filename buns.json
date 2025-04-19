@@ -19,7 +19,9 @@
       "url": "https://www.reddit.com/r/MurderBuns/comments/1in9qbr/i_looked_up_from_my_book_to_see_this_im_screwed/"
     },
     "left_ear": 6,
-    "right_ear": 1
+    "right_ear": 1,
+    "focus_x": 0.5,
+    "focus_y": 0.45
   },
   {
     "filename": "heart-bun.png",
@@ -51,8 +53,10 @@
       "author": "u/Fine-Cat4496",
       "url": "https://www.reddit.com/r/Rabbits/comments/1k2lcc4/its_almost_easter_right/"
     },
-    "left_ear": 11,
-    "right_ear": 12
+    "left_ear": 1,
+    "right_ear": 1,
+    "focus_x": 0.5,
+    "focus_y": 0.2
   },
   {
     "filename": "taro-loaf.png",
@@ -63,7 +67,9 @@
       "url": "https://www.instagram.com/amzlyz/"
     },
     "left_ear": 7,
-    "right_ear": 6
+    "right_ear": 6,
+    "focus_x": 0.5,
+    "focus_y": 0.6
   },
   {
     "filename": "taro-jump.png",
@@ -87,7 +93,9 @@
       "url": "https://www.instagram.com/amzlyz/"
     },
     "left_ear": 8,
-    "right_ear": 4
+    "right_ear": 4,
+    "focus_x": 0.5,
+    "focus_y": 0.6
   },
   {
     "filename": "blueberry-loaf.png",
@@ -98,7 +106,9 @@
       "url": "https://www.instagram.com/p/DITwZoAR-Dx/"
     },
     "left_ear": 6,
-    "right_ear": 5
+    "right_ear": 5,
+    "focus_x": 0.5,
+    "focus_y": 0.4
   },
   {
     "filename": "ursula-bun.png",
@@ -109,6 +119,8 @@
       "url": "https://www.instagram.com/p/DIUyHWhzpIo/"
     },
     "left_ear": 9,
-    "right_ear": 10
+    "right_ear": 10,
+    "focus_x": 0.5,
+    "focus_y": 0.2
   }
 ]
