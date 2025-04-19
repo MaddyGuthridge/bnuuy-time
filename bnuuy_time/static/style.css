@@ -7,13 +7,29 @@ body {
     overflow: hidden;
 }
 
-#bun-img {
+.background-container {
+    container-type: size;
+    top: 0;
+    position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
+}
+
+#bun-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    position: absolute;
-    top: 0;
+    /* https://odland.dev/2023/02/26/cropping-images-with-css-while-keeping-a-focal-point-in-the-center.html */
+    /* --crop-focus-x: 0.5;
+    --crop-focus-y: 0.4; */
+    --container-width: 100cqw;
+    --container-height: 100cqh;
+    --image-width: calc(var(--container-width) - 100%);
+    --image-height: calc(var(--container-height) - 100%);
+    object-position: clamp(100%,
+            0.5 * var(--container-width) - var(--crop-focus-x) * var(--image-width),
+            0%) clamp(100%, 0.5 * var(--container-height) - var(--crop-focus-y) * var(--image-height), 0%);
 }
 
 .center {
@@ -34,6 +50,14 @@ h1 {
     color: white;
     text-align: center;
     font-size: 5rem;
+}
+
+/*
+Prevent time from being wrapped
+https://stackoverflow.com/a/10104013/6335363
+*/
+span.no-wrap {
+    display: inline-block;
 }
 
 a {

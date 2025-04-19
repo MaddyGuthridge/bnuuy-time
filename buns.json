@@ -74,7 +74,9 @@
       "url": "https://www.instagram.com/amzlyz/"
     },
     "left_ear": 10,
-    "right_ear": 3
+    "right_ear": 3,
+    "focus_x": 0.5,
+    "focus_y": 0.4
   },
   {
     "filename": "taro-pancake.png",
