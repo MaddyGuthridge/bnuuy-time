@@ -1,0 +1,10 @@
+[project]
+name = "bnuuy-time"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flask>=3.1.0",
+    "pyhtml-enhanced>=2.2.4",
+]
