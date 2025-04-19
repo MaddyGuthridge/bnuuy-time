@@ -1,7 +1,7 @@
 from datetime import datetime
 import json
 import random
-from typing import TypedDict
+from typing import NotRequired, TypedDict
 
 
 class BunSource(TypedDict):
@@ -26,6 +26,14 @@ class BunDefinition(TypedDict):
     """Left ear time, as hour"""
     right_ear: int
     """Right ear time, as hour"""
+    focus_x: NotRequired[float]
+    """Focus point within 0-1 on x-axis. Defaults to 0.5"""
+    focus_y: NotRequired[float]
+    """Focus point within 0-1 on y-axis. Defaults to 0.5"""
+
+
+DEFAULT_FOCUS = 0.5
+"""Default focal point of bun photo"""
 
 
 BUNS_FILE = "buns.json"
@@ -98,3 +106,43 @@ def find_matching_bun(time: datetime) -> BunDefinition | None:
     if len(matches) == 0:
         return None
     return random.choice(matches)
+
+
+def hour_to_random_minute(hour: int) -> int:
+    """
+    Given an hour-hand value, return a reasonable minute-hand value.
+    """
+    if hour == 12:
+        return random.choice([58, 59, 0, 1, 2])
+    centre_point = hour * 5
+    return random.choice(range(centre_point - 2, centre_point + 3))
+
+
+def generate_time_for_bun(bun: BunDefinition) -> datetime:
+    """
+    Generate a random time that this bun says it is.
+    """
+    # Decide which ear is hour and which is minute
+    if random.randint(0, 1):
+        # Left ear is hour hand
+        hour = bun["left_ear"]
+        minute = hour_to_random_minute(bun["right_ear"])
+    else:
+        # Right ear is hour hand
+        hour = bun["right_ear"]
+        minute = hour_to_random_minute(bun["left_ear"])
+    # AM or PM
+    if random.randint(0, 1):
+        hour = (hour + 12) % 24
+
+    return datetime.now().replace(hour=hour, minute=minute)
+
+
+def find_bun_with_filename(filename: str) -> BunDefinition | None:
+    """
+    Find a bun whose image file matches
+    """
+    for bun in buns:
+        if bun["filename"] == filename:
+            return bun
+    return None
