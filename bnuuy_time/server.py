@@ -65,7 +65,15 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
 
 @app.get("/")
 def redirect_with_tz():
-    return redirect("/Australia/Sydney")
+    return str(
+        p.html(
+            p.body(
+                p.h1("Bnuuy time"),
+                p.p("Redirecting to your time zone..."),
+                p.script(src="/static/tz_redirect.js"),
+            )
+        )
+    )
 
 
 @app.get("/coverage")
@@ -155,6 +163,14 @@ def with_bun(bun_file: str):
 
 @app.get("/<time_str>")
 def at_time(time_str: str):
+    # Convenience redirects for common time zones
+    abbreviation_redirects = {
+        "UTC": "Etc/UTC",
+        "GMT": "Europe/London",
+    }
+    if time_str in abbreviation_redirects:
+        return redirect(f"{abbreviation_redirects[time_str]}")
+
     parsed = parse_time(time_str)
 
     if parsed is None:
@@ -163,7 +179,7 @@ def at_time(time_str: str):
     else:
         bun = find_matching_bun(parsed)
         if bun is None:
-            return f"No matching buns at {parsed} :("
+            return f"No matching buns at {format_time(parsed)} :("
         return bnuuy_time(bun, parsed)
 
 
@@ -172,7 +188,7 @@ def from_region(region: str, location: str):
     now = now_in_tz(ZoneInfo(f"{region}/{location}"))
     bun = find_matching_bun(now)
     if bun is None:
-        return f"No matching buns at {now} :("
+        return f"No matching buns at {format_time(now)} :("
     return bnuuy_time(bun, now)
 
 
