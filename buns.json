@@ -45,7 +45,7 @@
   },
   {
     "filename": "alice.png",
-    "name": null,
+    "name": "Alice",
     "source": {
       "platform": "Reddit",
       "author": "u/Fine-Cat4496",
@@ -53,5 +53,60 @@
     },
     "left_ear": 11,
     "right_ear": 12
+  },
+  {
+    "filename": "taro-loaf.png",
+    "name": "Taro",
+    "source": {
+      "platform": "Instagram",
+      "author": "@amzlyz",
+      "url": "https://www.instagram.com/amzlyz/"
+    },
+    "left_ear": 7,
+    "right_ear": 6
+  },
+  {
+    "filename": "taro-jump.png",
+    "name": "Taro",
+    "source": {
+      "platform": "Instagram",
+      "author": "@amzlyz",
+      "url": "https://www.instagram.com/amzlyz/"
+    },
+    "left_ear": 10,
+    "right_ear": 3
+  },
+  {
+    "filename": "taro-pancake.png",
+    "name": "Taro",
+    "source": {
+      "platform": "Instagram",
+      "author": "@amzlyz",
+      "url": "https://www.instagram.com/amzlyz/"
+    },
+    "left_ear": 8,
+    "right_ear": 4
+  },
+  {
+    "filename": "blueberry-loaf.png",
+    "name": "Blueberry",
+    "source": {
+      "platform": "Instagram",
+      "author": "@bluberrythebun",
+      "url": "https://www.instagram.com/p/DITwZoAR-Dx/"
+    },
+    "left_ear": 6,
+    "right_ear": 5
+  },
+  {
+    "filename": "ursula-bun.png",
+    "name": null,
+    "source": {
+      "platform": "Instagram",
+      "author": "@ursula.85.94",
+      "url": "https://www.instagram.com/p/DIUyHWhzpIo/"
+    },
+    "left_ear": 9,
+    "right_ear": 10
   }
 ]
