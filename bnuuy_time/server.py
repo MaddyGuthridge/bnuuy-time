@@ -51,11 +51,11 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                 ),
                 p.div(class_="center")(
                     p.main(
-                        p.h1(
+                        p.h1(class_="shadow")(
                             f"{name} says that it is",
                             p.span(class_="no-wrap")(t),
                         ),
-                        credits,
+                        p.span(class_="shadow")(credits),
                     ),
                 ),
             ),
