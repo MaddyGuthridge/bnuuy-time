@@ -1,0 +1,7 @@
+.covered {
+    background-color: rgb(183, 255, 183);
+}
+
+.not-covered {
+    background-color: rgb(255, 174, 174);
+}

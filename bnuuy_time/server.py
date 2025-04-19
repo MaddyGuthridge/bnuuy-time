@@ -55,7 +55,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                             f"{name} says that it is",
                             p.span(class_="no-wrap")(t),
                         ),
-                        p.span(class_="shadow")(credits),
+                        p.span(class_="shadow")("Credit: ", credits),
                     ),
                 ),
             ),
@@ -66,6 +66,81 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
 @app.get("/")
 def redirect_with_tz():
     return redirect("/Australia/Sydney")
+
+
+@app.get("/coverage")
+def coverage():
+    start_hour = 1
+    start_minute = 0
+    covered = False
+    coverage_times = []
+    minutes_covered = 0
+    minutes_uncovered = 0
+    for hour in range(1, 13):
+        for minute in range(60):
+            t = datetime.now().replace(hour=hour, minute=minute)
+            found_bun = find_matching_bun(t) is not None
+            if covered:
+                minutes_covered += 1
+            else:
+                minutes_uncovered += 1
+            if found_bun and not covered:
+                # Only add if it is a reasonable span of time
+                coverage_times.append(
+                    p.tr(_class="not-covered")(
+                        p.td(f"{start_hour}:{start_minute:02} - {hour}:{minute:02}"),
+                        p.td("No"),
+                    )
+                )
+                covered = True
+                start_hour = hour
+                start_minute = minute
+            elif not found_bun and covered:
+                covered = False
+                coverage_times.append(
+                    p.tr(_class="covered")(
+                        p.td(f"{start_hour}:{start_minute:02} - {hour}:{minute:02}"),
+                        p.td("Yes"),
+                    )
+                )
+                start_hour = hour
+                start_minute = minute
+
+    # Add final time span
+    coverage_times.append(
+        p.tr(_class="covered" if covered else "not-covered")(
+            p.td(f"{start_hour:02}:{start_minute:02} - 12:59"),
+            p.td("Yes" if covered else "No"),
+        )
+    )
+
+    total_minutes = minutes_covered + minutes_uncovered
+    percent_covered = minutes_covered / total_minutes * 100
+
+    return str(
+        p.html(
+            p.head(
+                p.link(rel="stylesheet", href="/static/coverage.css"),
+            ),
+            p.body(
+                p.h1("Bun coverage"),
+                p.p(
+                    f"{minutes_covered} / {total_minutes} minutes covered ({percent_covered:.0f}%)"
+                ),
+                p.table(
+                    p.thead(
+                        p.tr(
+                            p.th("Time span"),
+                            p.th("Covered?"),
+                        ),
+                    ),
+                    p.tbody(
+                        coverage_times,
+                    ),
+                ),
+            ),
+        )
+    )
 
 
 @app.get("/buns/<bun_file>")

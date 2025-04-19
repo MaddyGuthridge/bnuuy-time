@@ -5,6 +5,7 @@ body {
     padding: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow: hidden;
+    color: white;
 }
 
 .background-container {
@@ -51,7 +52,6 @@ main {
 }
 
 h1 {
-    color: white;
     text-align: center;
     font-size: 5rem;
 }
