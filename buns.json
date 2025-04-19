@@ -32,7 +32,8 @@
       "url": "https://www.reddit.com/r/Rabbits/comments/1k2n0ir/can_anybody_else_see_this/"
     },
     "left_ear": 7,
-    "right_ear": 4
+    "right_ear": 4,
+    "focus_x": 0.55
   },
   {
     "filename": "rabbit-run.png",
@@ -55,7 +56,7 @@
     },
     "left_ear": 1,
     "right_ear": 1,
-    "focus_x": 0.5,
+    "focus_x": 0.6,
     "focus_y": 0.2
   },
   {
@@ -68,7 +69,7 @@
     },
     "left_ear": 7,
     "right_ear": 6,
-    "focus_x": 0.5,
+    "focus_x": 0.55,
     "focus_y": 0.6
   },
   {
@@ -120,7 +121,7 @@
     },
     "left_ear": 9,
     "right_ear": 10,
-    "focus_x": 0.5,
+    "focus_x": 0.4,
     "focus_y": 0.2
   }
 ]
