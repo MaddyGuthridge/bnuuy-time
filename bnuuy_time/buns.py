@@ -44,7 +44,7 @@ def load_buns() -> list[BunDefinition]:
         return json.load(f)
 
 
-buns = load_buns()
+# buns = load_buns()
 
 
 def bun_left_ear_range(bun: BunDefinition) -> list[int]:
@@ -102,6 +102,7 @@ def find_matching_bun(time: datetime) -> BunDefinition | None:
     Find a bun that matches the given time. If there are multiple possible
     buns, pick one randomly.
     """
+    buns = load_buns()
     matches = [bun for bun in buns if bun_matches(time, bun)]
     if len(matches) == 0:
         return None
@@ -142,6 +143,7 @@ def find_bun_with_filename(filename: str) -> BunDefinition | None:
     """
     Find a bun whose image file matches
     """
+    buns = load_buns()
     for bun in buns:
         if bun["filename"] == filename:
             return bun
