@@ -164,7 +164,7 @@ def coverage():
     )
 
 
-@app.get("/buns/<bun_file>")
+@app.get("/buns/<path:bun_file>")
 def with_bun(bun_file: str):
     bun = find_bun_with_filename(bun_file)
 
