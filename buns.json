@@ -9,7 +9,7 @@
     },
     "left_ear": 11,
     "right_ear": 12,
-    "focus_x": 0.45,
+    "focus_x": 0.42,
     "focus_y": 0.35
   },
   {
@@ -22,7 +22,7 @@
     },
     "left_ear": 11,
     "right_ear": 1,
-    "focus_x": 0.45,
+    "focus_x": 0.4,
     "focus_y": 0.4
   },
   {
@@ -35,7 +35,7 @@
     },
     "left_ear": 11,
     "right_ear": 1,
-    "focus_x": 0.45,
+    "focus_x": 0.48,
     "focus_y": 0.4
   },
   {
@@ -48,8 +48,8 @@
     },
     "left_ear": 9,
     "right_ear": 11,
-    "focus_x": 0.45,
-    "focus_y": 0.25
+    "focus_x": 0.4,
+    "focus_y": 0.2
   },
   {
     "filename": "chewie/chewie-sploot.jpg",
@@ -61,8 +61,8 @@
     },
     "left_ear": 11,
     "right_ear": 11,
-    "focus_x": 0.5,
-    "focus_y": 0.55
+    "focus_x": 0.45,
+    "focus_y": 0.45
   },
   {
     "filename": "chewie/chewie-bean-bag.jpg",
@@ -74,8 +74,7 @@
     },
     "left_ear": 12,
     "right_ear": 2,
-    "focus_x": 0.5,
-    "focus_y": 0.55
+    "focus_y": 0.45
   },
   {
     "filename": "chewie/chewie-9.jpg",
@@ -87,8 +86,7 @@
     },
     "left_ear": 9,
     "right_ear": 12,
-    "focus_x": 0.5,
-    "focus_y": 0.55
+    "focus_y": 0.4
   },
   {
     "filename": "chewie/chewie-10.jpg",
@@ -100,7 +98,7 @@
     },
     "left_ear": 10,
     "right_ear": 12,
-    "focus_x": 0.5,
+    "focus_x": 0.4,
     "focus_y": 0.45
   },
   {
@@ -113,8 +111,7 @@
     },
     "left_ear": 11,
     "right_ear": 4,
-    "focus_x": 0.5,
-    "focus_y": 0.7
+    "focus_y": 0.6
   },
   {
     "filename": "chewie/chewie-ohio-2.jpg",
@@ -127,7 +124,7 @@
     "left_ear": 11,
     "right_ear": 6,
     "focus_x": 0.5,
-    "focus_y": 0.4
+    "focus_y": 0.35
   },
   {
     "filename": "chewie/chewie-mint.jpg",
@@ -139,8 +136,8 @@
     },
     "left_ear": 10,
     "right_ear": 10,
-    "focus_x": 0.5,
-    "focus_y": 0.7
+    "focus_x": 0.45,
+    "focus_y": 0.4
   },
   {
     "filename": "taro/taro-loaf.jpg",
@@ -165,7 +162,7 @@
     },
     "left_ear": 10,
     "right_ear": 3,
-    "focus_x": 0.5,
+    "focus_x": 0.48,
     "focus_y": 0.4
   },
   {
@@ -191,8 +188,8 @@
     },
     "left_ear": 4,
     "right_ear": 12,
-    "focus_x": 0.5,
-    "focus_y": 0.6
+    "focus_x": 0.47,
+    "focus_y": 0.65
   },
   {
     "filename": "taro/taro-paint.jpg",
@@ -204,8 +201,8 @@
     },
     "left_ear": 7,
     "right_ear": 5,
-    "focus_x": 0.5,
-    "focus_y": 0.6
+    "focus_x": 0.25,
+    "focus_y": 0.55
   },
   {
     "filename": "thistle/thistle-pram.jpg",
@@ -217,7 +214,7 @@
     },
     "left_ear": 3,
     "right_ear": 2,
-    "focus_x": 0.4,
+    "focus_x": 0.35,
     "focus_y": 0.6
   },
   {
@@ -230,8 +227,7 @@
     },
     "left_ear": 12,
     "right_ear": 12,
-    "focus_x": 0.4,
-    "focus_y": 0.6
+    "focus_y": 0.4
   },
   {
     "filename": "thistle/thistle-doggo.jpg",
@@ -243,8 +239,8 @@
     },
     "left_ear": 3,
     "right_ear": 4,
-    "focus_x": 0.4,
-    "focus_y": 0.6
+    "focus_x": 0.34,
+    "focus_y": 0.4
   },
   {
     "filename": "thistle/thistle-vet.jpg",
@@ -256,7 +252,6 @@
     },
     "left_ear": 10,
     "right_ear": 1,
-    "focus_x": 0.5,
     "focus_y": 0.65
   },
   {
@@ -269,8 +264,8 @@
     },
     "left_ear": 12,
     "right_ear": 1,
-    "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_x": 0.52,
+    "focus_y": 0.4
   },
   {
     "filename": "thistle/thistle-porch.jpg",
@@ -282,7 +277,7 @@
     },
     "left_ear": 10,
     "right_ear": 9,
-    "focus_x": 0.45,
+    "focus_x": 0.4,
     "focus_y": 0.4
   },
   {
@@ -295,8 +290,8 @@
     },
     "left_ear": 6,
     "right_ear": 6,
-    "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_x": 0.55,
+    "focus_y": 0.3
   },
   {
     "filename": "thistle/thistle-veggies.jpg",
@@ -308,8 +303,8 @@
     },
     "left_ear": 9,
     "right_ear": 9,
-    "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_x": 0.45,
+    "focus_y": 0.55
   },
   {
     "filename": "thistle/thistle-chair.jpg",
@@ -322,7 +317,7 @@
     "left_ear": 11,
     "right_ear": 2,
     "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_y": 0.5
   },
   {
     "filename": "thistle/thistle-ball.jpg",
@@ -334,8 +329,8 @@
     },
     "left_ear": 12,
     "right_ear": 2,
-    "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_x": 0.45,
+    "focus_y": 0.4
   },
   {
     "filename": "thistle/thistle-pride.jpg",
@@ -347,8 +342,8 @@
     },
     "left_ear": 12,
     "right_ear": 12,
-    "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_x": 0.53,
+    "focus_y": 0.5
   },
   {
     "filename": "thistle/thistle-hay.jpg",
@@ -360,147 +355,180 @@
     },
     "left_ear": 5,
     "right_ear": 5,
-    "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_x": 0.43,
+    "focus_y": 0.55
   },
   {
     "filename": "pat/1-05.jpg",
     "name": null,
     "source": null,
     "left_ear": 1,
-    "right_ear": 1
+    "right_ear": 1,
+    "focus_y": 0.6
   },
   {
     "filename": "pat/1-10.jpg",
     "name": null,
     "source": null,
     "left_ear": 1,
-    "right_ear": 2
+    "right_ear": 2,
+    "focus_x": 0.55
   },
   {
     "filename": "pat/1-30.jpg",
     "name": null,
     "source": null,
     "left_ear": 1,
-    "right_ear": 6
+    "right_ear": 6,
+    "focus_x": 0.55,
+    "focus_y": 0.4
   },
   {
     "filename": "pat/1-45.jpg",
     "name": null,
     "source": null,
     "left_ear": 9,
-    "right_ear": 1
+    "right_ear": 1,
+    "focus_x": 0.45,
+    "focus_y": 0.35
   },
   {
     "filename": "pat/1.jpg",
     "name": null,
     "source": null,
     "left_ear": 12,
-    "right_ear": 1
+    "right_ear": 1,
+    "focus_x": 0.3,
+    "focus_y": 0.45
   },
   {
     "filename": "pat/2-40.jpg",
     "name": null,
     "source": null,
     "left_ear": 8,
-    "right_ear": 2
+    "right_ear": 2,
+    "focus_x": 0.45,
+    "focus_y": 0.37
   },
   {
     "filename": "pat/8-30.jpg",
     "name": null,
     "source": null,
     "left_ear": 8,
-    "right_ear": 6
+    "right_ear": 6,
+    "focus_x": 0.45,
+    "focus_y": 0.4
   },
   {
     "filename": "pat/10-30.jpg",
     "name": null,
     "source": null,
     "left_ear": 10,
-    "right_ear": 6
+    "right_ear": 6,
+    "focus_x": 0.65,
+    "focus_y": 0.4
   },
   {
     "filename": "pat/11-10.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 2
+    "right_ear": 2,
+    "focus_x": 0.47,
+    "focus_y": 0.4
   },
   {
     "filename": "pat/11-15.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 3
+    "right_ear": 3,
+    "focus_x": 0.32,
+    "focus_y": 0.52
   },
   {
     "filename": "pat/11-45.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 9
+    "right_ear": 9,
+    "focus_y": 0.43
   },
   {
     "filename": "pat/11.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 12
+    "right_ear": 12,
+    "focus_x": 0.45,
+    "focus_y": 0.4
   },
   {
     "filename": "pat/castle.jpg",
     "name": null,
     "source": null,
     "left_ear": 7,
-    "right_ear": 5
+    "right_ear": 5,
+    "focus_y": 0.52
   },
   {
     "filename": "pat/floof.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 10
+    "right_ear": 2,
+    "focus_y": 0.55
   },
   {
     "filename": "pat/forage.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 12
+    "right_ear": 12,
+    "focus_x": 0.58,
+    "focus_y": 0.42
   },
   {
     "filename": "pat/midday.jpg",
     "name": null,
     "source": null,
     "left_ear": 12,
-    "right_ear": 12
+    "right_ear": 12,
+    "focus_x": 0.45,
+    "focus_y": 0.53
   },
   {
     "filename": "pat/oreo-snoot.jpg",
     "name": null,
     "source": null,
     "left_ear": 7,
-    "right_ear": 4
+    "right_ear": 4,
+    "focus_y": 0.45
   },
   {
     "filename": "pat/oreo.jpg",
     "name": null,
     "source": null,
     "left_ear": 6,
-    "right_ear": 4
+    "right_ear": 4,
+    "focus_y": 0.4
   },
   {
     "filename": "pat/reader-1.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 12
+    "right_ear": 12,
+    "focus_x": 0.7,
+    "focus_y": 0.45
   },
   {
     "filename": "pat/reader-2.jpg",
     "name": null,
     "source": null,
     "left_ear": 11,
-    "right_ear": 11
+    "right_ear": 11,
+    "focus_x": 0.47,
+    "focus_y": 0.4
   }
 ]
