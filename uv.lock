@@ -18,12 +18,14 @@ source = { virtual = "." }
 dependencies = [
     { name = "flask" },
     { name = "pyhtml-enhanced" },
+    { name = "uwsgi" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "flask", specifier = ">=3.1.0" },
     { name = "pyhtml-enhanced", specifier = ">=2.2.4" },
+    { name = "uwsgi", specifier = ">=2.0.29" },
 ]
 
 [[package]]
@@ -132,6 +134,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/f6/37/23083fcd6e3549295
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8b/54/b1ae86c0973cc6f0210b53d508ca3641fb6d0c56823f288d108bc7ab3cc8/typing_extensions-4.13.2-py3-none-any.whl", hash = "sha256:a439e7c04b49fec3e5d3e2beaa21755cadbbdc391694e28ccdd36ca4a1408f8c", size = 45806 },
 ]
+
+[[package]]
+name = "uwsgi"
+version = "2.0.29"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/af/74/34f5411f1c1dc55cbcba3d817d1723b920484d2aeede4663bbaa5be7ee22/uwsgi-2.0.29.tar.gz", hash = "sha256:6bd150ae60d0d9947429ea7dc8e5f868de027e5eb38355fb613b9413732c432f", size = 822515 }
 
 [[package]]
 name = "werkzeug"
