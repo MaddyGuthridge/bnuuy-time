@@ -1,6 +1,6 @@
 from datetime import datetime
 import random
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from flask import Flask, redirect
 import pyhtml as p
 
@@ -198,7 +198,10 @@ def at_time(time_str: str):
 
 @app.get("/<region>/<location>")
 def from_region(region: str, location: str):
-    now = now_in_tz(ZoneInfo(f"{region}/{location}"))
+    try:
+        now = now_in_tz(ZoneInfo(f"{region}/{location}"))
+    except ZoneInfoNotFoundError:
+        return str(no_buns_page(f"The time zone '{region}/{location}' does not exist"))
     bun = find_matching_bun(now)
     if bun is None:
         return str(no_buns_page(f"No matching buns at {format_time(now)} :("))
