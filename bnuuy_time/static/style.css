@@ -54,6 +54,13 @@ main {
 h1 {
     text-align: center;
     font-size: 5rem;
+    margin: 10px 30px;
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 3rem;
+    }
 }
 
 /*
