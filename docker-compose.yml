@@ -15,6 +15,6 @@ services:
     restart: unless-stopped
     entrypoint: ["uwsgi", "-w", "bnuuy_time.server:app", "uwsgi.ini"]
     ports:
-      - 127.0.0.1:7890:8000/tcp
+      - 127.0.0.1:7891:8000/tcp
       # Monitoring port
       # - 127.0.0.1:9004:9000/tcp
