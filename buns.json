@@ -49,7 +49,7 @@
     "left_ear": 9,
     "right_ear": 11,
     "focus_x": 0.45,
-    "focus_y": 0.4
+    "focus_y": 0.25
   },
   {
     "filename": "chewie/chewie-sploot.png",
@@ -101,7 +101,7 @@
     "left_ear": 10,
     "right_ear": 12,
     "focus_x": 0.5,
-    "focus_y": 0.55
+    "focus_y": 0.45
   },
   {
     "filename": "chewie/chewie-ohio-1.png",
@@ -282,8 +282,8 @@
     },
     "left_ear": 10,
     "right_ear": 9,
-    "focus_x": 0.5,
-    "focus_y": 0.65
+    "focus_x": 0.45,
+    "focus_y": 0.4
   },
   {
     "filename": "thistle/thistle-gardening.png",
