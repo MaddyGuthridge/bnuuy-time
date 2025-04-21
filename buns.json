@@ -362,5 +362,145 @@
     "right_ear": 5,
     "focus_x": 0.5,
     "focus_y": 0.65
+  },
+  {
+    "filename": "pat/1-05.png",
+    "name": null,
+    "source": null,
+    "left_ear": 1,
+    "right_ear": 1
+  },
+  {
+    "filename": "pat/1-10.png",
+    "name": null,
+    "source": null,
+    "left_ear": 1,
+    "right_ear": 2
+  },
+  {
+    "filename": "pat/1-30.png",
+    "name": null,
+    "source": null,
+    "left_ear": 1,
+    "right_ear": 6
+  },
+  {
+    "filename": "pat/1-45.png",
+    "name": null,
+    "source": null,
+    "left_ear": 9,
+    "right_ear": 1
+  },
+  {
+    "filename": "pat/1.png",
+    "name": null,
+    "source": null,
+    "left_ear": 12,
+    "right_ear": 1
+  },
+  {
+    "filename": "pat/2-40.png",
+    "name": null,
+    "source": null,
+    "left_ear": 8,
+    "right_ear": 2
+  },
+  {
+    "filename": "pat/8-30.png",
+    "name": null,
+    "source": null,
+    "left_ear": 8,
+    "right_ear": 6
+  },
+  {
+    "filename": "pat/10-30.png",
+    "name": null,
+    "source": null,
+    "left_ear": 10,
+    "right_ear": 6
+  },
+  {
+    "filename": "pat/11-10.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 2
+  },
+  {
+    "filename": "pat/11-15.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 3
+  },
+  {
+    "filename": "pat/11-45.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 9
+  },
+  {
+    "filename": "pat/11.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 12
+  },
+  {
+    "filename": "pat/castle.png",
+    "name": null,
+    "source": null,
+    "left_ear": 7,
+    "right_ear": 5
+  },
+  {
+    "filename": "pat/floof.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 10
+  },
+  {
+    "filename": "pat/forage.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 12
+  },
+  {
+    "filename": "pat/midday.png",
+    "name": null,
+    "source": null,
+    "left_ear": 12,
+    "right_ear": 12
+  },
+  {
+    "filename": "pat/oreo-snoot.png",
+    "name": null,
+    "source": null,
+    "left_ear": 7,
+    "right_ear": 4
+  },
+  {
+    "filename": "pat/oreo.png",
+    "name": null,
+    "source": null,
+    "left_ear": 6,
+    "right_ear": 4
+  },
+  {
+    "filename": "pat/reader-1.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 12
+  },
+  {
+    "filename": "pat/reader-2.png",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 11
   }
 ]
