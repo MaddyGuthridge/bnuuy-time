@@ -33,6 +33,8 @@ def generate_head(
         p.meta(name="keywords", content="clock, time, bunny, rabbit, Maddy Guthridge"),
         p.meta(name="author", content="Maddy Guthridge"),
         p.meta(name="viewport", content="width=device-width, initial-scale=1.0"),
+        # Refresh every minute
+        p.meta(http_equiv="refresh", content="60"),
     )
 
 
