@@ -18,6 +18,24 @@ from .times import format_time, now_in_tz, parse_time
 app = Flask(__name__)
 
 
+def generate_head(
+    title: str | None,
+    extra_css: list[str],
+):
+    title = f"{title} - Bnuuy Time" if title else "Bnuuy time"
+    return p.head(
+        p.title(title),
+        [p.link(rel="stylesheet", href=css_file) for css_file in extra_css],
+        p.meta(
+            name="description",
+            content="When you visit this webpage, a bunny rabbit will tell you what time it is",
+        ),
+        p.meta(name="keywords", content="clock, time, bunny, rabbit, Maddy Guthridge"),
+        p.meta(name="author", content="Maddy Guthridge"),
+        p.meta(name="viewport", content="width=device-width, initial-scale=1.0"),
+    )
+
+
 def bnuuy_time(bun: BunDefinition, time: datetime):
     t = format_time(time)
 
@@ -40,9 +58,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
 
     return str(
         p.html(
-            p.head(
-                p.link(rel="stylesheet", href="/static/style.css"),
-            ),
+            generate_head(t, ["/static/style.css"]),
             p.body(
                 p.div(class_="background-container")(
                     p.img(
@@ -66,12 +82,15 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
     )
 
 
-def no_buns_page(reason: str):
-    return p.html(
-        p.body(
-            p.h1("No matching bunnies"),
-            p.p(reason),
-            p.p("I'll add more bunnies over time..."),
+def error_page(reason: str):
+    return str(
+        p.html(
+            generate_head("Error", []),
+            p.body(
+                p.h1("No matching bunnies"),
+                p.p(reason),
+                p.p("I'll add more bunnies over time..."),
+            ),
         )
     )
 
@@ -80,11 +99,12 @@ def no_buns_page(reason: str):
 def redirect_with_tz():
     return str(
         p.html(
+            generate_head(None, []),
             p.body(
                 p.h1("Bnuuy time"),
                 p.p("Redirecting to your time zone..."),
                 p.script(src="/static/tz_redirect.js"),
-            )
+            ),
         )
     )
 
@@ -140,9 +160,7 @@ def coverage():
 
     return str(
         p.html(
-            p.head(
-                p.link(rel="stylesheet", href="/static/coverage.css"),
-            ),
+            generate_head("Bun coverage", ["/static/coverage.css"]),
             p.body(
                 p.h1("Bun coverage"),
                 p.p(
@@ -169,7 +187,7 @@ def with_bun(bun_file: str):
     bun = find_bun_with_filename(bun_file)
 
     if bun is None:
-        return str(no_buns_page(f"No buns with filename {bun_file}"))
+        return error_page(f"No buns with filename {bun_file}")
     else:
         return bnuuy_time(bun, generate_time_for_bun(bun))
 
@@ -187,12 +205,11 @@ def at_time(time_str: str):
     parsed = parse_time(time_str)
 
     if parsed is None:
-        print("Unable to parse time")
-        return "Unable to parse time"
+        return error_page(f"Unable to parse the time string '{time_str}'")
     else:
         bun = find_matching_bun(parsed)
         if bun is None:
-            return str(no_buns_page(f"No matching buns at {format_time(parsed)} :("))
+            return str(error_page(f"No matching buns at {format_time(parsed)} :("))
         return bnuuy_time(bun, parsed)
 
 
@@ -201,10 +218,10 @@ def from_region(region: str, location: str):
     try:
         now = now_in_tz(ZoneInfo(f"{region}/{location}"))
     except ZoneInfoNotFoundError:
-        return str(no_buns_page(f"The time zone '{region}/{location}' does not exist"))
+        return error_page(f"The time zone '{region}/{location}' does not exist")
     bun = find_matching_bun(now)
     if bun is None:
-        return str(no_buns_page(f"No matching buns at {format_time(now)} :("))
+        return error_page(f"No matching buns at {format_time(now)} :(")
     return bnuuy_time(bun, now)
 
 
