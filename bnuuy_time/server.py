@@ -93,7 +93,7 @@ def redirect_with_tz():
 def coverage():
     start_hour = 1
     start_minute = 0
-    covered = False
+    covered = True
     coverage_times = []
     minutes_covered = 0
     minutes_uncovered = 0
@@ -101,10 +101,6 @@ def coverage():
         for minute in range(60):
             t = datetime.now().replace(hour=hour, minute=minute)
             found_bun = find_matching_bun(t) is not None
-            if covered:
-                minutes_covered += 1
-            else:
-                minutes_uncovered += 1
             if found_bun and not covered:
                 # Only add if it is a reasonable span of time
                 coverage_times.append(
@@ -126,6 +122,10 @@ def coverage():
                 )
                 start_hour = hour
                 start_minute = minute
+            if covered:
+                minutes_covered += 1
+            else:
+                minutes_uncovered += 1
 
     # Add final time span
     coverage_times.append(
