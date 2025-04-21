@@ -1,6 +1,149 @@
 [
   {
-    "filename": "taro-loaf.png",
+    "filename": "chewie/chewie-11.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/DH1ZWljq5Bg/"
+    },
+    "left_ear": 11,
+    "right_ear": 12,
+    "focus_x": 0.45,
+    "focus_y": 0.35
+  },
+  {
+    "filename": "chewie/chewie-1.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/DHf175WKfj_/"
+    },
+    "left_ear": 11,
+    "right_ear": 1,
+    "focus_x": 0.45,
+    "focus_y": 0.4
+  },
+  {
+    "filename": "chewie/chewie-11-5.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/DHWMLKKKe8j/"
+    },
+    "left_ear": 11,
+    "right_ear": 1,
+    "focus_x": 0.45,
+    "focus_y": 0.4
+  },
+  {
+    "filename": "chewie/chewie-munch.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/DHQHF-QKRwz/?img_index=1"
+    },
+    "left_ear": 9,
+    "right_ear": 11,
+    "focus_x": 0.45,
+    "focus_y": 0.4
+  },
+  {
+    "filename": "chewie/chewie-sploot.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/DDaSG3mKZBg/"
+    },
+    "left_ear": 11,
+    "right_ear": 11,
+    "focus_x": 0.5,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "chewie/chewie-bean-bag.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/DErfnLSK6_Q/"
+    },
+    "left_ear": 12,
+    "right_ear": 2,
+    "focus_x": 0.5,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "chewie/chewie-9.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/C-NBISEqgDt/"
+    },
+    "left_ear": 9,
+    "right_ear": 12,
+    "focus_x": 0.5,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "chewie/chewie-10.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/CwAvELIKWPG/"
+    },
+    "left_ear": 10,
+    "right_ear": 12,
+    "focus_x": 0.5,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "chewie/chewie-ohio-1.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/CvSQ1ikq-Px/"
+    },
+    "left_ear": 11,
+    "right_ear": 4,
+    "focus_x": 0.5,
+    "focus_y": 0.7
+  },
+  {
+    "filename": "chewie/chewie-ohio-2.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/CvR6bZbqpzC/"
+    },
+    "left_ear": 11,
+    "right_ear": 6,
+    "focus_x": 0.5,
+    "focus_y": 0.4
+  },
+  {
+    "filename": "chewie/chewie-mint.png",
+    "name": "Chewie",
+    "source": {
+      "platform": "Instagram",
+      "author": "@chewie_the_giant_floof",
+      "url": "https://www.instagram.com/p/Cu91KPhNHqk/"
+    },
+    "left_ear": 10,
+    "right_ear": 10,
+    "focus_x": 0.5,
+    "focus_y": 0.7
+  },
+  {
+    "filename": "taro/taro-loaf.png",
     "name": "Taro",
     "source": {
       "platform": "Instagram",
@@ -13,7 +156,7 @@
     "focus_y": 0.6
   },
   {
-    "filename": "taro-jump.png",
+    "filename": "taro/taro-jump.png",
     "name": "Taro",
     "source": {
       "platform": "Instagram",
@@ -26,7 +169,7 @@
     "focus_y": 0.4
   },
   {
-    "filename": "taro-pancake.png",
+    "filename": "taro/taro-pancake.png",
     "name": "Taro",
     "source": {
       "platform": "Instagram",
@@ -37,5 +180,187 @@
     "right_ear": 4,
     "focus_x": 0.5,
     "focus_y": 0.6
+  },
+  {
+    "filename": "taro/taro-sleepy.png",
+    "name": "Taro",
+    "source": {
+      "platform": "Instagram",
+      "author": "@amzlyz",
+      "url": "https://www.instagram.com/p/CY-nbs0Lwly/"
+    },
+    "left_ear": 4,
+    "right_ear": 12,
+    "focus_x": 0.5,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "taro/taro-paint.png",
+    "name": "Taro",
+    "source": {
+      "platform": "Instagram",
+      "author": "@amzlyz",
+      "url": "https://www.instagram.com/p/DD0QUxBT1mr/?img_index=1"
+    },
+    "left_ear": 7,
+    "right_ear": 5,
+    "focus_x": 0.5,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "thistle/thistle-pram.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/DIp9jl1Jb6C/"
+    },
+    "left_ear": 3,
+    "right_ear": 2,
+    "focus_x": 0.4,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "thistle/thistle-blanket.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/DH-omBspKkY/"
+    },
+    "left_ear": 12,
+    "right_ear": 12,
+    "focus_x": 0.4,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "thistle/thistle-doggo.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/DFo8f55SCuH/"
+    },
+    "left_ear": 3,
+    "right_ear": 4,
+    "focus_x": 0.4,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "thistle/thistle-vet.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/DDqBQetyIlY/?img_index=1"
+    },
+    "left_ear": 10,
+    "right_ear": 1,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-sploot.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/C8_JYzKSl7q/"
+    },
+    "left_ear": 12,
+    "right_ear": 1,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-porch.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/C3JN3U6upLY/"
+    },
+    "left_ear": 10,
+    "right_ear": 9,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-gardening.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/CwcRWejr3YP/"
+    },
+    "left_ear": 6,
+    "right_ear": 6,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-veggies.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/CwcRWejr3YP/"
+    },
+    "left_ear": 9,
+    "right_ear": 9,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-chair.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/Cei3HfnFyuD/"
+    },
+    "left_ear": 11,
+    "right_ear": 2,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-ball.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/CcWpWahgjoS/"
+    },
+    "left_ear": 12,
+    "right_ear": 2,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-pride.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/CatZfSEl7p3/"
+    },
+    "left_ear": 12,
+    "right_ear": 12,
+    "focus_x": 0.5,
+    "focus_y": 0.65
+  },
+  {
+    "filename": "thistle/thistle-hay.png",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/p/CXsZ8f1lRAI/?img_index=1"
+    },
+    "left_ear": 5,
+    "right_ear": 5,
+    "focus_x": 0.5,
+    "focus_y": 0.65
   }
 ]
