@@ -27,9 +27,12 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
 
     # Credits
     source = bun["source"]
-    credits = p.a(href=source["url"], target="_blank")(
-        f"{source['author']} on {source['platform']}",
-    )
+    if source is not None:
+        credits = p.a(href=source["url"], target="_blank")(
+            f"{source['author']} on {source['platform']}",
+        )
+    else:
+        credits = None
 
     # Focus point
     focus_x = bun.get("focus_x", DEFAULT_FOCUS)
@@ -55,7 +58,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                             f"{name} says that it is",
                             p.span(class_="no-wrap")(t),
                         ),
-                        p.span(class_="shadow")("Credit: ", credits),
+                        p.span(class_="shadow")("Credit: ", credits) if credits else [],
                     ),
                 ),
             ),
@@ -166,9 +169,7 @@ def with_bun(bun_file: str):
     bun = find_bun_with_filename(bun_file)
 
     if bun is None:
-        return str(
-            no_buns_page(f"No buns with filename {bun_file}")
-        )
+        return str(no_buns_page(f"No buns with filename {bun_file}"))
     else:
         return bnuuy_time(bun, generate_time_for_bun(bun))
 
@@ -191,9 +192,7 @@ def at_time(time_str: str):
     else:
         bun = find_matching_bun(parsed)
         if bun is None:
-            return str(
-                no_buns_page(f"No matching buns at {format_time(parsed)} :(")
-            )
+            return str(no_buns_page(f"No matching buns at {format_time(parsed)} :("))
         return bnuuy_time(bun, parsed)
 
 
@@ -202,9 +201,7 @@ def from_region(region: str, location: str):
     now = now_in_tz(ZoneInfo(f"{region}/{location}"))
     bun = find_matching_bun(now)
     if bun is None:
-        return str(
-            no_buns_page(f"No matching buns at {format_time(now)} :(")
-        )
+        return str(no_buns_page(f"No matching buns at {format_time(now)} :("))
     return bnuuy_time(bun, now)
 
 

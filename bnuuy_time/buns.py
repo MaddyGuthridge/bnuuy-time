@@ -20,7 +20,7 @@ class BunDefinition(TypedDict):
     """filename in src/static/buns/"""
     name: str | None
     """name of bun, or None if name not known"""
-    source: BunSource
+    source: BunSource | None
     """Credit to bun's hoom"""
     left_ear: int
     """Left ear time, as hour"""
