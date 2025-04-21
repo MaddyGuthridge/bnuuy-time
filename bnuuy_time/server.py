@@ -56,6 +56,16 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
     focus_x = bun.get("focus_x", DEFAULT_FOCUS)
     focus_y = bun.get("focus_y", DEFAULT_FOCUS)
 
+    time_adjective = random.choice(
+        [
+            "says that it is",
+            "says the time is",
+            "says it's",
+            "says that it's",
+            "says it is",
+        ]
+    )
+
     return str(
         p.html(
             generate_head(t, ["/static/style.css"]),
@@ -71,7 +81,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                 p.div(class_="center")(
                     p.main(
                         p.h1(class_="shadow")(
-                            f"{name} says that it is",
+                            f"{name} {time_adjective}",
                             p.span(class_="no-wrap")(t),
                         ),
                         p.span(class_="shadow")("Credit: ", credits) if credits else [],
