@@ -14,8 +14,8 @@ def parse_time(time_str: str) -> datetime | None:
     for fmt in formats:
         try:
             return datetime.strptime(time_str, fmt)
-        except Exception as e:
-            print(e)
+        except Exception as _:
+            pass
     return None
 
 
