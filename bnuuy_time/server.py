@@ -4,6 +4,8 @@ from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from flask import Flask, redirect
 import pyhtml as p
 
+from bnuuy_time.util import red_scale
+
 from .buns import (
     DEFAULT_FOCUS,
     BunDefinition,
@@ -124,13 +126,6 @@ def redirect_with_tz():
 
 @app.get("/coverage")
 def coverage():
-    def red_scale(value: float) -> str:
-        """Interpolate between red and green background colour"""
-        low = 183
-        high = 255
-        diff = value * (high - low)
-        return f"rgb({high - diff}, {low + diff}, {low})"
-
     coverage_times = []
     for hour in range(1, 13):
         for minute in range(0, 60, 5):
@@ -139,10 +134,10 @@ def coverage():
             num_buns = len(buns)
             closest_bun = min(bun[0] for bun in buns)
 
-            # 2 buns is great coverage
-            bg_num_buns = red_scale(num_buns / 2)
+            # 3 buns is great coverage
+            bg_num_buns = red_scale(num_buns / 3)
             # 30 degrees away is bad
-            bg_closest_buns = red_scale((30 - min(closest_bun, 30)) / 10)
+            bg_closest_buns = red_scale((30 - closest_bun) / 10)
 
             # Make each hour have a background colour for readability
             time_bgs = {
