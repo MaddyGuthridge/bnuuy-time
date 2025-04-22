@@ -23,9 +23,9 @@ class BunDefinition(TypedDict):
     source: BunSource | None
     """Credit to bun's hoom"""
     left_ear: int
-    """Left ear time, as hour"""
+    """Left ear time, in degrees"""
     right_ear: int
-    """Right ear time, as hour"""
+    """Right ear time, in degrees"""
     focus_x: NotRequired[float]
     """Focus point within 0-1 on x-axis. Defaults to 0.5"""
     focus_y: NotRequired[float]
@@ -44,28 +44,24 @@ def load_buns() -> list[BunDefinition]:
         return json.load(f)
 
 
-def bun_matches(time: datetime, bun: BunDefinition) -> bool:
+def bun_closeness(time: datetime, bun: BunDefinition) -> int:
     """
-    Returns whether this bun matches the given time
+    Returns the total number of degrees between this bun's ears and the hands
+    of the clock.
     """
-    hour_oclock = time.hour % 12
-    if hour_oclock == 0:
-        hour_oclock = 12
-    minute_oclock = round(time.minute / 5)
-    if minute_oclock == 0:
-        minute_oclock = 12
+    minute_degrees = time.minute * 5
+    # Includes the minute hand's effect on the hour hand
+    hour_degrees = round(time.hour % 12 * 30 + minute_degrees / 12) % 360
 
     left_ear = bun["left_ear"]
     right_ear = bun["right_ear"]
 
-    # Left ear is hour hand, right ear is minute hand
-    if hour_oclock == left_ear and minute_oclock == right_ear:
-        return True
-    # Left ear is minute hand, right ear is hour hand
-    elif hour_oclock == right_ear and minute_oclock == left_ear:
-        return True
-    else:
-        return False
+    # Consider both the left and right ears as the hour hand
+    left_hour = abs(hour_degrees - left_ear) + abs(minute_degrees - right_ear)
+    right_hour = abs(hour_degrees - right_ear) + abs(minute_degrees - left_ear)
+
+    # Pick whichever is closest
+    return min(left_hour, right_hour)
 
 
 def find_matching_bun(time: datetime) -> BunDefinition | None:
@@ -73,21 +69,45 @@ def find_matching_bun(time: datetime) -> BunDefinition | None:
     Find a bun that matches the given time. If there are multiple possible
     buns, pick one randomly.
     """
+    # Max number of degrees of difference between the bun and the hour hands
+    MAX_THRESHOLD = 30
+    # Buns that are within this many degrees of the lowest value are also valid
+    ALSO_VALID_THRESHOLD = 10
+
     buns = load_buns()
-    matches = [bun for bun in buns if bun_matches(time, bun)]
+
+    # Current matches
+    matches: list[BunDefinition] = []
+    # Total number of degrees between the closest match and the actual time
+    closest_distance = MAX_THRESHOLD
+
+    for bun in buns:
+        closeness = bun_closeness(time, bun)
+        if closeness > MAX_THRESHOLD:
+            continue
+        elif closeness < closest_distance:
+            # This bun is a new best distance
+            matches.append(bun)
+            # Filter matches based on the new closeness
+            # They must have a closeness less than `closeness + ALSO_VALID_THRESHOLD`
+            matches = [
+                match
+                for match in matches
+                if bun_closeness(time, match) <= closeness + ALSO_VALID_THRESHOLD
+            ]
+            closest_distance = closeness
+        elif closeness <= closest_distance + ALSO_VALID_THRESHOLD:
+            # Bun is close enough, but isn't a new best distance
+            matches.append(bun)
+        else:
+            # Bun is not close enough
+            continue
+
+    # No matches were close enough to consider valid
     if len(matches) == 0:
         return None
+    # Choose one of the best options randomly
     return random.choice(matches)
-
-
-def hour_to_random_minute(hour: int) -> int:
-    """
-    Given an hour-hand value, return a reasonable minute-hand value.
-    """
-    if hour == 12:
-        return random.choice([58, 59, 0, 1, 2])
-    centre_point = hour * 5
-    return random.choice(range(centre_point - 2, centre_point + 3))
 
 
 def generate_time_for_bun(bun: BunDefinition) -> datetime:
@@ -97,12 +117,12 @@ def generate_time_for_bun(bun: BunDefinition) -> datetime:
     # Decide which ear is hour and which is minute
     if random.randint(0, 1):
         # Left ear is hour hand
-        hour = bun["left_ear"]
-        minute = hour_to_random_minute(bun["right_ear"])
+        hour = bun["left_ear"] // 30
+        minute = bun["right_ear"] // 6
     else:
         # Right ear is hour hand
-        hour = bun["right_ear"]
-        minute = hour_to_random_minute(bun["left_ear"])
+        hour = bun["right_ear"] // 30
+        minute = bun["left_ear"] // 6
     # AM or PM
     if random.randint(0, 1):
         hour = (hour + 12) % 24
