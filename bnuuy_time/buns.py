@@ -76,8 +76,11 @@ def find_matching_bun(time: datetime) -> BunDefinition | None:
     Find a bun that matches the given time. If there are multiple possible
     buns, pick one randomly.
     """
-    # Max number of degrees of difference between the bun and the hour hands
-    MAX_THRESHOLD = 30
+    # Max number of degrees of difference between the bun and the hour hands.
+    # This value is pretty high, so some buns will be inaccurate sometimes.
+    # At least the ALSO_VALID_THRESHOLD should prevent inaccurate values unless
+    # there is no alternative.
+    MAX_THRESHOLD = 90
     # Buns that are within this many degrees of the lowest value are also valid
     ALSO_VALID_THRESHOLD = 10
 
