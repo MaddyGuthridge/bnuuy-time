@@ -36,6 +36,20 @@ DEFAULT_FOCUS = 0.5
 """Default focal point of bun photo"""
 
 
+
+MAX_THRESHOLD = 90
+"""
+Max number of degrees of difference between the bun and the hour hands.
+This value is pretty high, so some buns will be inaccurate sometimes.
+At least the ALSO_VALID_THRESHOLD should prevent inaccurate values unless
+there is no alternative.
+"""
+
+ALSO_VALID_THRESHOLD = 20
+"""
+Buns that are within this many degrees of the lowest value are also valid.
+"""
+
 BUNS_FILE = "buns.json"
 
 
@@ -64,11 +78,56 @@ def bun_closeness(time: datetime, bun: BunDefinition) -> int:
     right_ear = bun["right_ear"]
 
     # Consider both the left and right ears as the hour hand
-    left_hour = angle_diff(hour_degrees, left_ear) + angle_diff(minute_degrees, right_ear)
-    right_hour = angle_diff(hour_degrees, right_ear) + angle_diff(minute_degrees, left_ear)
+    left_hour = angle_diff(hour_degrees, left_ear) + angle_diff(
+        minute_degrees, right_ear
+    )
+    right_hour = angle_diff(hour_degrees, right_ear) + angle_diff(
+        minute_degrees, left_ear
+    )
 
     # Pick whichever is closest
     return min(left_hour, right_hour)
+
+
+def find_matching_buns(time: datetime) -> list[tuple[int, BunDefinition]]:
+    """
+    Return all matching buns at the given time.
+
+    Returns matching buns as a tuple of `(closeness, bun)`, where buns with a
+    lower closeness value are closest to the preferred times.
+    """
+
+    buns = load_buns()
+
+    # Current matches, in the form `(closeness, bun)`
+    matches: list[tuple[int, BunDefinition]] = []
+    # Total number of degrees between the closest match and the actual time
+    closest_distance = MAX_THRESHOLD
+
+    for bun in buns:
+        closeness = bun_closeness(time, bun)
+        if closeness > MAX_THRESHOLD:
+            # Bun is too far away to even consider it
+            continue
+        elif closeness < closest_distance:
+            # This bun is a new best distance
+            matches.append((closeness, bun))
+            # Filter matches based on the new closeness
+            # They must have a closeness less than `closeness + ALSO_VALID_THRESHOLD`
+            matches = [
+                (c, match)
+                for c, match in matches
+                if c <= closeness + ALSO_VALID_THRESHOLD
+            ]
+            closest_distance = closeness
+        elif closeness <= closest_distance + ALSO_VALID_THRESHOLD:
+            # Bun is close enough, but isn't a new best distance
+            matches.append((closeness, bun))
+        else:
+            # Bun is not close enough
+            continue
+
+    return matches
 
 
 def find_matching_bun(time: datetime) -> BunDefinition | None:
@@ -76,48 +135,23 @@ def find_matching_bun(time: datetime) -> BunDefinition | None:
     Find a bun that matches the given time. If there are multiple possible
     buns, pick one randomly.
     """
-    # Max number of degrees of difference between the bun and the hour hands.
-    # This value is pretty high, so some buns will be inaccurate sometimes.
-    # At least the ALSO_VALID_THRESHOLD should prevent inaccurate values unless
-    # there is no alternative.
-    MAX_THRESHOLD = 90
-    # Buns that are within this many degrees of the lowest value are also valid
-    ALSO_VALID_THRESHOLD = 10
-
-    buns = load_buns()
-
-    # Current matches
-    matches: list[BunDefinition] = []
-    # Total number of degrees between the closest match and the actual time
-    closest_distance = MAX_THRESHOLD
-
-    for bun in buns:
-        closeness = bun_closeness(time, bun)
-        if closeness > MAX_THRESHOLD:
-            continue
-        elif closeness < closest_distance:
-            # This bun is a new best distance
-            matches.append(bun)
-            # Filter matches based on the new closeness
-            # They must have a closeness less than `closeness + ALSO_VALID_THRESHOLD`
-            matches = [
-                match
-                for match in matches
-                if bun_closeness(time, match) <= closeness + ALSO_VALID_THRESHOLD
-            ]
-            closest_distance = closeness
-        elif closeness <= closest_distance + ALSO_VALID_THRESHOLD:
-            # Bun is close enough, but isn't a new best distance
-            matches.append(bun)
-        else:
-            # Bun is not close enough
-            continue
+    matches = find_matching_buns(time)
 
     # No matches were close enough to consider valid
     if len(matches) == 0:
         return None
-    # Choose one of the best options randomly
-    return random.choice(matches)
+
+    closest_distance = min(m[0] for m in matches)
+
+    # Choose one of the best options weighting them so that closer buns are
+    # more likely
+    # Rewrite the value so that closest bun has a weighting of 10, and other
+    # buns have weighting based on how close they are to the closest
+    matches = [(MAX_THRESHOLD - (c - closest_distance), bun) for c, bun in matches]
+    # Unzip iterator using zip(*matches), and convert the results to a list
+    # https://book.pythontips.com/en/latest/zip.html
+    weights, matched_buns = map(list, zip(*matches))
+    return random.choices(matched_buns, weights)[0]
 
 
 def generate_time_for_bun(bun: BunDefinition) -> datetime:
