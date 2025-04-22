@@ -44,6 +44,13 @@ def load_buns() -> list[BunDefinition]:
         return json.load(f)
 
 
+def angle_diff(a: int, b: int) -> int:
+    """
+    Difference between angles, accounting for wrap-around at 360 degrees
+    """
+    return min(abs(a - b), 360 - abs(a - b))
+
+
 def bun_closeness(time: datetime, bun: BunDefinition) -> int:
     """
     Returns the total number of degrees between this bun's ears and the hands
@@ -57,8 +64,8 @@ def bun_closeness(time: datetime, bun: BunDefinition) -> int:
     right_ear = bun["right_ear"]
 
     # Consider both the left and right ears as the hour hand
-    left_hour = abs(hour_degrees - left_ear) + abs(minute_degrees - right_ear)
-    right_hour = abs(hour_degrees - right_ear) + abs(minute_degrees - left_ear)
+    left_hour = angle_diff(hour_degrees, left_ear) + angle_diff(minute_degrees, right_ear)
+    right_hour = angle_diff(hour_degrees, right_ear) + angle_diff(minute_degrees, left_ear)
 
     # Pick whichever is closest
     return min(left_hour, right_hour)
