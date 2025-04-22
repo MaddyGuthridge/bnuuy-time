@@ -9,6 +9,7 @@ from .buns import (
     BunDefinition,
     find_bun_with_filename,
     find_matching_bun,
+    find_matching_buns,
     generate_time_for_bun,
 )
 
@@ -123,66 +124,60 @@ def redirect_with_tz():
 
 @app.get("/coverage")
 def coverage():
-    start_hour = 1
-    start_minute = 0
-    covered = True
+    def red_scale(value: float) -> str:
+        """Interpolate between red and green background colour"""
+        low = 183
+        high = 255
+        diff = value * (high - low)
+        return f"rgb({high - diff}, {low + diff}, {low})"
+
     coverage_times = []
-    minutes_covered = 0
-    minutes_uncovered = 0
     for hour in range(1, 13):
-        for minute in range(60):
+        for minute in range(0, 60, 5):
             t = datetime.now().replace(hour=hour, minute=minute)
-            found_bun = find_matching_bun(t) is not None
-            if found_bun and not covered:
-                # Only add if it is a reasonable span of time
-                coverage_times.append(
-                    p.tr(_class="not-covered")(
-                        p.td(f"{start_hour}:{start_minute:02} - {hour}:{minute:02}"),
-                        p.td("No"),
-                    )
-                )
-                covered = True
-                start_hour = hour
-                start_minute = minute
-            elif not found_bun and covered:
-                covered = False
-                coverage_times.append(
-                    p.tr(_class="covered")(
-                        p.td(f"{start_hour}:{start_minute:02} - {hour}:{minute:02}"),
-                        p.td("Yes"),
-                    )
-                )
-                start_hour = hour
-                start_minute = minute
-            if covered:
-                minutes_covered += 1
-            else:
-                minutes_uncovered += 1
+            buns = find_matching_buns(t)
+            num_buns = len(buns)
+            closest_bun = min(bun[0] for bun in buns)
 
-    # Add final time span
-    coverage_times.append(
-        p.tr(_class="covered" if covered else "not-covered")(
-            p.td(f"{start_hour:02}:{start_minute:02} - 12:59"),
-            p.td("Yes" if covered else "No"),
-        )
-    )
+            # 2 buns is great coverage
+            bg_num_buns = red_scale(num_buns / 2)
+            # 30 degrees away is bad
+            bg_closest_buns = red_scale((30 - min(closest_bun, 30)) / 10)
 
-    total_minutes = minutes_covered + minutes_uncovered
-    percent_covered = minutes_covered / total_minutes * 100
+            # Make each hour have a background colour for readability
+            time_bgs = {
+                # Blue
+                0: "rgb(200, 200, 255)",
+                # Red
+                15: "rgb(255, 200, 200)",
+                # Green
+                30: "rgb(200, 255, 200)",
+                # Red
+                45: "rgb(255, 200, 200)",
+            }
+            bg_time = time_bgs.get(minute, "rgb(255, 255, 255)")
+
+            coverage_times.append(
+                p.tr(
+                    p.td(style=f"background-color: {bg_time}")(f"{hour}:{minute:02}"),
+                    p.td(style=f"background-color: {bg_num_buns}")(f"{num_buns}"),
+                    p.td(style=f"background-color: {bg_closest_buns}")(
+                        f"{closest_bun}"
+                    ),
+                )
+            )
 
     return str(
         p.html(
             generate_head("Bun coverage", ["/static/coverage.css"]),
             p.body(
                 p.h1("Bun coverage"),
-                p.p(
-                    f"{minutes_covered} / {total_minutes} minutes covered ({percent_covered:.0f}%)"
-                ),
                 p.table(
                     p.thead(
                         p.tr(
-                            p.th("Time span"),
-                            p.th("Covered?"),
+                            p.th("Time"),
+                            p.th("Matching buns"),
+                            p.th("Angle difference"),
                         ),
                     ),
                     p.tbody(
