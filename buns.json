@@ -532,6 +532,32 @@
     "focus_y": 0.4
   },
   {
+    "filename": "pat/6-15.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 211,
+    "right_ear": 90,
+    "focus_x": 0.47,
+    "focus_y": 0.4
+  },
+  {
+    "filename": "pat/9-25.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 292,
+    "right_ear": 149,
+    "focus_y": 0.7
+  },
+  {
+    "filename": "pat/10-55.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 317,
+    "right_ear": 348,
+    "focus_x": 0.53,
+    "focus_y": 0.3
+  },
+  {
     "filename": "jeicam/daisy.jpg",
     "name": "Daisy",
     "source": {
