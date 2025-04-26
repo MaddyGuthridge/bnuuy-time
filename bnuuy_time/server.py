@@ -1,5 +1,6 @@
 from datetime import datetime
 import random
+import statistics
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 from flask import Flask, redirect
 import pyhtml as p
@@ -129,12 +130,14 @@ def redirect_with_tz():
 @app.get("/coverage")
 def coverage():
     coverage_times = []
+    degree_discrepancies: list[int] = []
     for hour in range(1, 13):
         for minute in range(0, 60, 5):
             t = datetime.now().replace(hour=hour, minute=minute)
             buns = find_matching_buns(t)
             num_buns = len(buns)
             closest_bun = min(bun[0] for bun in buns)
+            degree_discrepancies.append(closest_bun)
 
             # 3 buns is great coverage
             bg_num_buns = red_scale(num_buns / 3)
@@ -164,11 +167,14 @@ def coverage():
                 )
             )
 
+    average_discrepancy = statistics.mean(degree_discrepancies)
+
     return str(
         p.html(
             generate_head("Bun coverage", ["/static/coverage.css"]),
             p.body(
                 p.h1("Bun coverage"),
+                p.p(f"Mean angle discrepancy: {average_discrepancy:.0f}deg"),
                 p.table(
                     p.thead(
                         p.tr(
