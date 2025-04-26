@@ -530,5 +530,68 @@
     "right_ear": 319,
     "focus_x": 0.47,
     "focus_y": 0.4
+  },
+  {
+    "filename": "jeicam/daisy.jpg",
+    "name": "Daisy",
+    "source": {
+      "platform": "Reddit",
+      "author": "u/jeicam_the_pirate",
+      "url": "https://www.reddit.com/r/MurderBuns/comments/1jszd1b/murder_daisy/"
+    },
+    "left_ear": 48,
+    "right_ear": 317,
+    "focus_x": 0.6
+  },
+  {
+    "filename": "jeicam/storage-unit.jpg",
+    "name": "Daisy",
+    "source": {
+      "platform": "Reddit",
+      "author": "u/jeicam_the_pirate",
+      "url": "https://www.reddit.com/r/hewillbebaked/comments/1idwins/she_will_be_storage_unitd_reaction/"
+    },
+    "left_ear": 334,
+    "right_ear": 46,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "jeicam/snail.jpg",
+    "name": ["Daisy", "Snail"],
+    "source": {
+      "platform": "Reddit",
+      "author": "u/jeicam_the_pirate",
+      "url": "https://www.reddit.com/r/bunnieswithhats/comments/1hwc4j3/i_know_this_is_for_bunnies_with_hats_but_here_is/"
+    },
+    "left_ear": 30,
+    "right_ear": 30,
+    "focus_x": 0.25,
+    "focus_y": 0.3
+  },
+  {
+    "filename": "jeicam/daisy-4.jpg",
+    "name": "Daisy",
+    "source": {
+      "platform": "Reddit",
+      "author": "u/jeicam_the_pirate",
+      "url": "https://www.reddit.com/r/bunnyshaming/comments/1gulybt/is_it_the_ones_off_the_carpet_that_taste_better/"
+    },
+    "left_ear": 329,
+    "right_ear": 115,
+    "focus_x": 0.45,
+    "focus_y": 0.1
+  },
+  {
+    "filename": "jeicam/daisy-snoot.jpg",
+    "name": "Daisy",
+    "source": {
+      "platform": "Reddit",
+      "author": "u/jeicam_the_pirate",
+      "url": "https://www.reddit.com/r/MurderBuns/comments/1g7eows/the_weather_mostly_bunny_with_a_chance_of/"
+    },
+    "left_ear": 180,
+    "right_ear": 124,
+    "focus_x": 0.55,
+    "focus_y": 0.65
   }
 ]
