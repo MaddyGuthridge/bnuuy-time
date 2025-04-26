@@ -59,6 +59,18 @@ def generate_head(
     )
 
 
+def top_links():
+    return p.header(class_="shadow")(
+        p.span("Bnuuy Time"),
+        p.span("•"),
+        p.span(
+            p.a(href="https://maddyguthridge.com")("Made with <3 by Maddy Guthridge")
+        ),
+        p.span("•"),
+        p.span(p.a(href="/about")("About")),
+    )
+
+
 def bnuuy_time(bun: BunDefinition, time: datetime):
     t = format_time(time)
 
@@ -73,7 +85,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
     if source is not None:
         credits = p.a(href=source["url"], target="_blank")(
             platform_logo(source["platform"]),
-            f"{source['author']} on {source['platform']}",
+            f"{source['author']}",
         )
     else:
         credits = None
@@ -104,6 +116,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                         alt=f"{name}'s ears are telling the time like an analog clock, and say that the time is {t}",
                     ),
                 ),
+                top_links(),
                 p.div(class_="center")(
                     p.main(
                         p.h1(class_="shadow")(
@@ -248,22 +261,26 @@ def coverage():
 
     return str(
         p.html(
-            generate_head("Bun coverage", ["/static/coverage.css"]),
+            generate_head(
+                "Bun coverage", ["/static/coverage.css", "/static/about.css"]
+            ),
             p.body(
-                p.h1("Bun coverage"),
-                p.p(f"Mean angle discrepancy: {average_discrepancy:.0f}deg"),
-                p.table(
-                    p.thead(
-                        p.tr(
-                            p.th("Time"),
-                            p.th("Matching buns"),
-                            p.th("Angle difference"),
+                p.main(
+                    p.h1("Coverage -", p.a(href="/")("Bnuuy Time")),
+                    p.p(f"Mean angle discrepancy: {average_discrepancy:.0f}deg"),
+                    p.table(
+                        p.thead(
+                            p.tr(
+                                p.th("Time"),
+                                p.th("Matching buns"),
+                                p.th("Angle difference"),
+                            ),
+                        ),
+                        p.tbody(
+                            coverage_times,
                         ),
                     ),
-                    p.tbody(
-                        coverage_times,
-                    ),
-                ),
+                )
             ),
         )
     )

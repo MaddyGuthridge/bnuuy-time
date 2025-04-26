@@ -32,7 +32,10 @@ body {
 
 
 .shadow {
-    text-shadow: 0px 0px 10px black;
+    text-shadow:
+        0px 0px 5px black,
+        0px 0px 10px black,
+        0px 0px 15px black;
 }
 
 h1 {

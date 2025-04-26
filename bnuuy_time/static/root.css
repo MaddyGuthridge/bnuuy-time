@@ -43,3 +43,9 @@ This is disabled when high contrast is enabled, which improves visibility.
         text-decoration: underline;
     }
 }
+
+header {
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
