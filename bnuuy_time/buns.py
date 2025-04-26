@@ -18,8 +18,8 @@ class BunSource(TypedDict):
 class BunDefinition(TypedDict):
     filename: str
     """filename in src/static/buns/"""
-    name: str | None
-    """name of bun, or None if name not known"""
+    name: str | list[str] | None
+    """name of bun, list of potential names, or None if name not known"""
     source: BunSource | None
     """Credit to bun's hoom"""
     left_ear: int

@@ -47,6 +47,8 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
     name = bun["name"]
     if name is None:
         name = random.choice(["Bun", "Bunny", "Bnuuy"])
+    elif isinstance(name, list):
+        name = random.choice(name)
 
     # Credits
     source = bun["source"]
