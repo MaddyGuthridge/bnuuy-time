@@ -62,8 +62,8 @@ def generate_head(
 def top_links():
     return p.header(class_="shadow")(
         p.span("Bnuuy Time"),
-        p.span("•"),
-        p.span(
+        p.span(class_="hide-mobile")("•"),
+        p.span(class_="hide-mobile")(
             p.a(href="https://maddyguthridge.com")("Made with <3 by Maddy Guthridge")
         ),
         p.span("•"),
