@@ -10,6 +10,7 @@ from bnuuy_time.util import red_scale
 from .buns import (
     DEFAULT_FOCUS,
     BunDefinition,
+    bun_statistics,
     find_bun_with_filename,
     find_matching_bun,
     find_matching_buns,
@@ -44,6 +45,7 @@ def generate_head(
     title = f"{title} - Bnuuy Time" if title else "Bnuuy time"
     return p.head(
         p.title(title),
+        p.link(rel="stylesheet", href="/static/root.css"),
         [p.link(rel="stylesheet", href=css_file) for css_file in extra_css],
         p.meta(
             name="description",
@@ -92,7 +94,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
 
     return str(
         p.html(
-            generate_head(t, ["/static/style.css"]),
+            generate_head(t, ["/static/buns.css"]),
             p.body(
                 p.div(class_="background-container")(
                     p.img(
@@ -138,6 +140,65 @@ def redirect_with_tz():
                 p.h1("Bnuuy time"),
                 p.p("Redirecting to your time zone..."),
                 p.script(src="/static/tz_redirect.js"),
+            ),
+        )
+    )
+
+
+@app.get("/about")
+def about_page():
+    statistics = bun_statistics()
+    return str(
+        p.html(
+            generate_head("About", ["/static/about.css"]),
+            p.body(
+                p.main(
+                    p.h1("About -", p.a(href="/")("Bnuuy Time")),
+                    p.article(
+                        p.p(
+                            "This website is a collection of rabbit photos, where "
+                            "each bunny's ears form an analog clock showing the "
+                            "current time. Currently, the site contains "
+                            f"{statistics['num_buns']} bunnies."
+                        ),
+                        p.p(
+                            "Project made with <3 by ",
+                            p.a(href="https://maddyguthridge.com")("Maddy Guthridge"),
+                            ".",
+                        ),
+                        p.h2("A bunny's ears are wrong! Why?"),
+                        p.p(
+                            "The website picks bunnies by comparing the angle of "
+                            "their ears to the angle of the hands on an analog clock. "
+                            "Sometimes, it can't find a bunny whose ears are close "
+                            "enough, and so it picks the closest it can find. "
+                            "You can determine times with the best (and "
+                            "worst) bunny coverage ",
+                            p.a(href="/coverage")("here"),
+                            ".",
+                        ),
+                        p.h2("Can I add my own bunny's photos to the site?"),
+                        p.p(
+                            "I'd love to include your bunnies on the site! Currently "
+                            "I'll need to add them myself, so feel free to reach out "
+                            "and send some bun photos to me! Currently, the site "
+                            "doesn't have a system for uploading photos yourself, but "
+                            "if you're interested in this, shoot me a message."
+                        ),
+                        p.h2("How are you making money?"),
+                        p.p(
+                            "I'm not. I made this project for fun, and have no "
+                            "intention of monetizing it. However, if you want to "
+                            "support my work, I'd love if you ",
+                            p.a(href="https://buymeacoffee.com/maddyguthridge")(
+                                "buy me a bowl of pasta"
+                            ),
+                            ". No pressure, of course!",
+                        ),
+                        p.h2("Are you tracking and selling my data?"),
+                        p.p("Not in the slightest :)"),
+                    ),
+                ),
             ),
         )
     )

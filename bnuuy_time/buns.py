@@ -58,6 +58,13 @@ def load_buns() -> list[BunDefinition]:
         return json.load(f)
 
 
+def bun_statistics():
+    buns = load_buns()
+    return {
+        "num_buns": len(buns)
+    }
+
+
 def angle_diff(a: int, b: int) -> int:
     """
     Difference between angles, accounting for wrap-around at 360 degrees

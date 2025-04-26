@@ -1,9 +1,6 @@
 body {
     width: 100vw;
     height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow: hidden;
     color: white;
 }
@@ -33,19 +30,6 @@ body {
             0%) clamp(100%, 0.5 * var(--container-height) - var(--crop-focus-y) * var(--image-height), 0%);
 }
 
-.center {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .shadow {
     text-shadow: 0px 0px 10px black;
@@ -63,22 +47,11 @@ h1 {
     }
 }
 
-/*
-Prevent time from being wrapped
-https://stackoverflow.com/a/10104013/6335363
-*/
-span.no-wrap {
-    display: inline-block;
-}
 
 a {
     color: white;
-    text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 .platform-logo {
     height: 1rem;

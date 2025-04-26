@@ -1,0 +1,45 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.center {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+Prevent time from being wrapped
+https://stackoverflow.com/a/10104013/6335363
+*/
+span.no-wrap {
+    display: inline-block;
+}
+
+article {
+    max-width: 800px;
+}
+
+/*
+Make links not have an underline unless hovered.
+
+This is disabled when high contrast is enabled, which improves visibility.
+*/
+@media not (prefers-contrast) {
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
