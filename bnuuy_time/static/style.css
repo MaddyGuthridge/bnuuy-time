@@ -79,3 +79,8 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.platform-logo {
+    height: 1rem;
+    vertical-align: middle;
+}

@@ -22,6 +22,21 @@ from .times import format_time, now_in_tz, parse_time
 app = Flask(__name__)
 
 
+platform_logos = {
+    "instagram": "/static/instagram.png",
+    "reddit": "/static/reddit.png",
+}
+
+
+def platform_logo(platform: str):
+    platform = platform.lower()
+    print(platform)
+    if platform in platform_logos:
+        return p.img(src=platform_logos[platform.lower()], class_="platform-logo")
+    else:
+        return p.span()
+
+
 def generate_head(
     title: str | None,
     extra_css: list[str],
@@ -55,6 +70,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
     source = bun["source"]
     if source is not None:
         credits = p.a(href=source["url"], target="_blank")(
+            platform_logo(source["platform"]),
             f"{source['author']} on {source['platform']}",
         )
     else:
