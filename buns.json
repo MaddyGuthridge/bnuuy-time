@@ -367,9 +367,7 @@
       "url": "https://www.instagram.com/thistleladybrussell/"
     },
     "left_ear": 313,
-    "right_ear": 337,
-    "focus_x": 0.43,
-    "focus_y": 0.55
+    "right_ear": 337
   },
   {
     "filename": "thistle/thistle-grass.jpg",
@@ -381,8 +379,7 @@
     },
     "left_ear": 280,
     "right_ear": 298,
-    "focus_x": 0.43,
-    "focus_y": 0.55
+    "focus_y": 0.4
   },
   {
     "filename": "thistle/thistle-leash.jpg",
@@ -393,17 +390,14 @@
       "url": "https://www.instagram.com/thistleladybrussell/"
     },
     "left_ear": 92,
-    "right_ear": 48,
-    "focus_x": 0.43,
-    "focus_y": 0.55
+    "right_ear": 48
   },
   {
     "filename": "me/1-35.jpg",
     "name": null,
     "source": null,
     "left_ear": 36,
-    "right_ear": 209,
-    "focus_y": 0.6
+    "right_ear": 209
   },
   {
     "filename": "me/1-40.jpg",
@@ -411,7 +405,7 @@
     "source": null,
     "left_ear": 38,
     "right_ear": 215,
-    "focus_y": 0.6
+    "focus_x": 0.4
   },
   {
     "filename": "me/3-30.jpg",
@@ -419,7 +413,7 @@
     "source": null,
     "left_ear": 117,
     "right_ear": 194,
-    "focus_y": 0.6
+    "focus_x": 0.55
   },
   {
     "filename": "me/6-55.jpg",
