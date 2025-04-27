@@ -209,7 +209,12 @@ def about_page():
                             ". No pressure, of course!",
                         ),
                         p.h2("Are you tracking and selling my data?"),
-                        p.p("Not in the slightest :)"),
+                        p.p(
+                            "I use Cloudflare analytics to keep track of "
+                            "visitors to my site. This data is not sold by me "
+                            "or by Cloudflare, and is used exclusively for "
+                            "gathering insights into site and page popularity."
+                        ),
                     ),
                 ),
             ),
