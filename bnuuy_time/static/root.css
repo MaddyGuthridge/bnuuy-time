@@ -47,7 +47,7 @@ This is disabled when high contrast is enabled, which improves visibility.
 header {
     display: flex;
     gap: 5px;
-    margin-left: 10px;
+    margin: 10px;
 }
 
 @media only screen and (max-width: 600px) {
