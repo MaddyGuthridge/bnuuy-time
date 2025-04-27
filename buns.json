@@ -359,6 +359,77 @@
     "focus_y": 0.55
   },
   {
+    "filename": "thistle/thistle-park.jpg",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/thistleladybrussell/"
+    },
+    "left_ear": 313,
+    "right_ear": 337,
+    "focus_x": 0.43,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "thistle/thistle-grass.jpg",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/thistleladybrussell/"
+    },
+    "left_ear": 280,
+    "right_ear": 298,
+    "focus_x": 0.43,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "thistle/thistle-leash.jpg",
+    "name": "Thistle",
+    "source": {
+      "platform": "Instagram",
+      "author": "@thistleladybrussell",
+      "url": "https://www.instagram.com/thistleladybrussell/"
+    },
+    "left_ear": 92,
+    "right_ear": 48,
+    "focus_x": 0.43,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "me/1-35.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 36,
+    "right_ear": 209,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "me/1-40.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 38,
+    "right_ear": 215,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "me/3-30.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 117,
+    "right_ear": 194,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "me/6-55.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 335,
+    "right_ear": 198,
+    "focus_y": 0.6
+  },
+  {
     "filename": "pat/1-05.jpg",
     "name": null,
     "source": null,
