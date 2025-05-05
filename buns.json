@@ -431,6 +431,73 @@
     "focus_y": 0.6
   },
   {
+    "filename": "me/5pm.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 156,
+    "right_ear": 0
+  },
+  {
+    "filename": "me/9-55.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 329,
+    "right_ear": 296,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "me/9am.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 0,
+    "right_ear": 256,
+    "focus_y": 0.45,
+    "focus_x": 0.65
+  },
+  {
+    "filename": "me/10-55.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 319,
+    "right_ear": 297,
+    "focus_y": 0.55,
+    "focus_x": 0.55
+  },
+  {
+    "filename": "me/11-10.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 48,
+    "right_ear": 328,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "me/aeroplane.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 136,
+    "right_ear": 304,
+    "focus_y": 0.4,
+    "focus_x": 0.46
+  },
+  {
+    "filename": "me/lop.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 155,
+    "right_ear": 180,
+    "focus_y": 0.35,
+    "focus_x": 0.4
+  },
+  {
+    "filename": "me/sir_mordred.jpg",
+    "name": ["Mordy", "Sir Mordred"],
+    "source": null,
+    "left_ear": 31,
+    "right_ear": 322,
+    "focus_x": 0.45
+  },
+  {
     "filename": "pat/1-05.jpg",
     "name": null,
     "source": null,
