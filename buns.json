@@ -715,6 +715,103 @@
     "focus_y": 0.3
   },
   {
+    "filename": "pat/10-55-2.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 328,
+    "right_ear": 311,
+    "focus_x": 0.53,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pat/aeroplane.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 86,
+    "right_ear": 203,
+    "focus_x": 0.53,
+    "focus_y": 0.35
+  },
+  {
+    "filename": "pat/baguette.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 333,
+    "right_ear": 309,
+    "focus_x": 0.53
+  },
+  {
+    "filename": "pat/lop.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 162,
+    "right_ear": 199,
+    "focus_x": 0.53,
+    "focus_y": 0.55
+  },
+  {
+    "filename": "pat/mousey.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 347,
+    "right_ear": 299,
+    "focus_x": 0.45,
+    "focus_y": 0.3
+  },
+  {
+    "filename": "pat/pants.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 44,
+    "right_ear": 0,
+    "focus_x": 0.35,
+    "focus_y": 0.4
+  },
+  {
+    "filename": "pat/pants-2.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 11,
+    "right_ear": 346,
+    "focus_y": 0.4
+  },
+  {
+    "filename": "pat/smol.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 29,
+    "right_ear": 335,
+    "focus_x": 0.53,
+    "focus_y": 0.5
+  },
+  {
+    "filename": "pat/snoot.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 57,
+    "right_ear": 32,
+    "focus_x": 0.53,
+    "focus_y": 0.35
+  },
+  {
+    "filename": "pat/speckled-lop.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 155,
+    "right_ear": 213,
+    "focus_x": 0.53,
+    "focus_y": 0.6
+  },
+  {
+    "filename": "pat/stare.jpg",
+    "name": null,
+    "source": null,
+    "left_ear": 31,
+    "right_ear": 343,
+    "focus_x": 0.53,
+    "focus_y": 0.45
+  },
+  {
     "filename": "jeicam/daisy.jpg",
     "name": "Daisy",
     "source": {
