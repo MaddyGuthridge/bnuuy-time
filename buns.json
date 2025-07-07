@@ -205,6 +205,31 @@
     "focus_y": 0.55
   },
   {
+    "filename": "taro/taro-birthday.jpg",
+    "name": "Taro",
+    "source": {
+      "platform": "Instagram",
+      "author": "@amzlyz",
+      "url": "https://www.instagram.com/amzlyz/"
+    },
+    "left_ear": 9,
+    "right_ear": 239,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "taro/taro-binky-painting.jpg",
+    "name": "Taro",
+    "source": {
+      "platform": "Instagram",
+      "author": "@amzlyz",
+      "url": "https://www.instagram.com/p/C19Pxi4BdHO/"
+    },
+    "left_ear": 114,
+    "right_ear": 306,
+    "focus_x": 0.55,
+    "focus_y": 0.2
+  },
+  {
     "filename": "thistle/thistle-pram.jpg",
     "name": "Thistle",
     "source": {
