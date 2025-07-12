@@ -14,7 +14,6 @@ updates:
     schedule:
       interval: "monthly"
   - package-ecosystem: "docker"
-    # Dockerfiles are in subdirectory
-    directory: "/docker"
+    directory: "/"
     schedule:
       interval: "monthly"
