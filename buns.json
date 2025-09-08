@@ -837,6 +837,77 @@
     "focus_y": 0.45
   },
   {
+    "filename": "pat/IMG_4732.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 298,
+    "right_ear": 138,
+    "focus_x": 0.53,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pat/IMG_4734.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 314,
+    "right_ear": 138,
+    "focus_x": 0.53,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pat/IMG_4739.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 84,
+    "right_ear": 278,
+    "focus_x": 0.45,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pat/IMG_4746.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 147,
+    "right_ear": 357,
+    "focus_x": 0.53,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pat/IMG_4748.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 109,
+    "right_ear": 212,
+    "focus_x": 0.53,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pat/IMG_4749.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 126,
+    "right_ear": 260,
+    "focus_x": 0.60
+  },
+  {
+    "filename": "pat/IMG_4750.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 113,
+    "right_ear": 177,
+    "focus_x": 0.6,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pat/IMG_4751.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 101,
+    "right_ear": 226,
+    "focus_x": 0.43,
+    "focus_y": 0.45
+  },
+  {
     "filename": "jeicam/daisy.jpg",
     "name": "Daisy",
     "source": {
