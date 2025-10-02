@@ -969,5 +969,68 @@
     "right_ear": 124,
     "focus_x": 0.55,
     "focus_y": 0.65
+  },
+  {
+    "filename": "pants_bun/IMG_5196.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 122,
+    "right_ear": 257,
+    "focus_x": 0.55,
+    "focus_y": 0.35
+  },
+  {
+    "filename": "pants_bun/IMG_5197.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 129,
+    "right_ear": 279,
+    "focus_x": 0.41,
+    "focus_y": 0.25
+  },
+  {
+    "filename": "pants_bun/IMG_5198.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 129,
+    "right_ear": 295,
+    "focus_x": 0.43,
+    "focus_y": 0.2
+  },
+  {
+    "filename": "pants_bun/IMG_5199.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 183,
+    "right_ear": 9,
+    "focus_x": 0.45,
+    "focus_y": 0.3
+  },
+  {
+    "filename": "pants_bun/IMG_5201.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 126,
+    "right_ear": 262,
+    "focus_x": 0.45,
+    "focus_y": 0.27
+  },
+  {
+    "filename": "pants_bun/IMG_5207.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 79,
+    "right_ear": 262,
+    "focus_x": 0.45,
+    "focus_y": 0.45
+  },
+  {
+    "filename": "pants_bun/IMG_5210.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 50,
+    "right_ear": 217,
+    "focus_x": 0.5,
+    "focus_y": 0.5
   }
 ]
