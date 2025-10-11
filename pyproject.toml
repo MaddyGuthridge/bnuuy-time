@@ -17,3 +17,26 @@ dev = [
     "pytest>=8.3.5",
     "ruff>=0.12.3",
 ]
+
+[tool.mypy]
+check_untyped_defs = true
+files = ["bnuuy_time", "tests"]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]

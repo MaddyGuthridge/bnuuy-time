@@ -1,6 +1,6 @@
-from datetime import datetime
 import json
 import random
+from datetime import datetime
 from typing import NotRequired, TypedDict
 
 
@@ -36,7 +36,6 @@ DEFAULT_FOCUS = 0.5
 """Default focal point of bun photo"""
 
 
-
 MAX_THRESHOLD = 90
 """
 Max number of degrees of difference between the bun and the hour hands.
@@ -60,9 +59,7 @@ def load_buns() -> list[BunDefinition]:
 
 def bun_statistics():
     buns = load_buns()
-    return {
-        "num_buns": len(buns)
-    }
+    return {"num_buns": len(buns)}
 
 
 def angle_diff(a: int, b: int) -> int:
@@ -120,7 +117,8 @@ def find_matching_buns(time: datetime) -> list[tuple[int, BunDefinition]]:
             # This bun is a new best distance
             matches.append((closeness, bun))
             # Filter matches based on the new closeness
-            # They must have a closeness less than `closeness + ALSO_VALID_THRESHOLD`
+            # They must have a closeness less than
+            # `closeness + ALSO_VALID_THRESHOLD`
             matches = [
                 (c, match)
                 for c, match in matches
@@ -154,10 +152,12 @@ def find_matching_bun(time: datetime) -> BunDefinition | None:
     # more likely
     # Rewrite the value so that closest bun has a weighting of 10, and other
     # buns have weighting based on how close they are to the closest
-    matches = [(MAX_THRESHOLD - (c - closest_distance), bun) for c, bun in matches]
+    matches = [
+        (MAX_THRESHOLD - (c - closest_distance), bun) for c, bun in matches
+    ]
     # Unzip iterator using zip(*matches), and convert the results to a list
     # https://book.pythontips.com/en/latest/zip.html
-    weights, matched_buns = map(list, zip(*matches))
+    weights, matched_buns = map(list, zip(*matches, strict=False))
     return random.choices(matched_buns, weights)[0]
 
 

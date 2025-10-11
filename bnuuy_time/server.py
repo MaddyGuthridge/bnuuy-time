@@ -1,9 +1,10 @@
-from datetime import datetime
 import random
 import statistics
+from datetime import datetime
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
-from flask import Flask, redirect
+
 import pyhtml as p
+from flask import Flask, redirect
 
 from bnuuy_time.util import red_scale
 
@@ -16,9 +17,7 @@ from .buns import (
     find_matching_buns,
     generate_time_for_bun,
 )
-
 from .times import format_time, now_in_tz, parse_time
-
 
 app = Flask(__name__)
 
@@ -33,7 +32,9 @@ def platform_logo(platform: str):
     platform = platform.lower()
     print(platform)
     if platform in platform_logos:
-        return p.img(src=platform_logos[platform.lower()], class_="platform-logo")
+        return p.img(
+            src=platform_logos[platform.lower()], class_="platform-logo"
+        )
     else:
         return p.span()
 
@@ -49,11 +50,19 @@ def generate_head(
         [p.link(rel="stylesheet", href=css_file) for css_file in extra_css],
         p.meta(
             name="description",
-            content="When you visit this webpage, a bunny rabbit will tell you what time it is",
+            content=(
+                "When you visit this webpage, a bunny rabbit will tell "
+                "you what time it is"
+            ),
         ),
-        p.meta(name="keywords", content="clock, time, bunny, rabbit, Maddy Guthridge"),
+        p.meta(
+            name="keywords",
+            content="clock, time, bunny, rabbit, Maddy Guthridge",
+        ),
         p.meta(name="author", content="Maddy Guthridge"),
-        p.meta(name="viewport", content="width=device-width, initial-scale=1.0"),
+        p.meta(
+            name="viewport", content="width=device-width, initial-scale=1.0"
+        ),
         # Refresh every minute
         p.meta(http_equiv="refresh", content="60"),
     )
@@ -64,7 +73,9 @@ def top_links():
         p.span("Bnuuy Time"),
         p.span(class_="hide-mobile")("•"),
         p.span(class_="hide-mobile")(
-            p.a(href="https://maddyguthridge.com")("Made with <3 by Maddy Guthridge")
+            p.a(href="https://maddyguthridge.com")(
+                "Made with <3 by Maddy Guthridge"
+            )
         ),
         p.span("•"),
         p.span(p.a(href="/about")("About")),
@@ -111,9 +122,15 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                 p.div(class_="background-container")(
                     p.img(
                         id="bun-img",
-                        style=f"--crop-focus-x: {focus_x}; --crop-focus-y: {focus_y}",
+                        style=(
+                            f"--crop-focus-x: {focus_x}; "
+                            f"--crop-focus-y: {focus_y}"
+                        ),
                         src=f"/static/buns/{bun['filename']}",
-                        alt=f"{name}'s ears are telling the time like an analog clock, and say that the time is {t}",
+                        alt=(
+                            f"{name}'s ears are telling the time like an "
+                            f"analog clock, and say that the time is {t}"
+                        ),
                     ),
                 ),
                 top_links(),
@@ -123,7 +140,9 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                             f"{name} {time_adjective}",
                             p.span(class_="no-wrap")(t),
                         ),
-                        p.span(class_="shadow")("Credit: ", credits) if credits else [],
+                        p.span(class_="shadow")("Credit: ", credits)
+                        if credits
+                        else [],
                     ),
                 ),
             ),
@@ -169,43 +188,46 @@ def about_page():
                     p.h1("About -", p.a(href="/")("Bnuuy Time")),
                     p.article(
                         p.p(
-                            "This website is a collection of rabbit photos, where "
-                            "each bunny's ears form an analog clock showing the "
-                            "current time. Currently, the site contains "
-                            f"{statistics['num_buns']} bunnies."
+                            "This website is a collection of rabbit photos, "
+                            "where each bunny's ears form an analog clock "
+                            "showing the current time. Currently, the site "
+                            f"contains {statistics['num_buns']} bunnies."
                         ),
                         p.p(
                             "Project made with <3 by ",
-                            p.a(href="https://maddyguthridge.com")("Maddy Guthridge"),
+                            p.a(href="https://maddyguthridge.com")(
+                                "Maddy Guthridge"
+                            ),
                             ".",
                         ),
                         p.h2("A bunny's ears are wrong! Why?"),
                         p.p(
-                            "The website picks bunnies by comparing the angle of "
-                            "their ears to the angle of the hands on an analog clock. "
-                            "Sometimes, it can't find a bunny whose ears are close "
-                            "enough, and so it picks the closest it can find. "
-                            "You can determine times with the best (and "
-                            "worst) bunny coverage ",
+                            "The website picks bunnies by comparing the angle "
+                            "of their ears to the angle of the hands on an "
+                            "analog clock. Sometimes, it can't find a bunny "
+                            "whose ears are close enough, and so it picks the "
+                            "closest it can find. You can determine times "
+                            "with the best (and worst) bunny coverage ",
                             p.a(href="/coverage")("here"),
                             ".",
                         ),
                         p.h2("Can I add my own bunny's photos to the site?"),
                         p.p(
-                            "I'd love to include your bunnies on the site! Currently "
-                            "I'll need to add them myself, so feel free to reach out "
-                            "and send some bun photos to me! Currently, the site "
-                            "doesn't have a system for uploading photos yourself, but "
-                            "if you're interested in this, shoot me a message."
+                            "I'd love to include your bunnies on the site! "
+                            "Currently I'll need to add them myself, so feel "
+                            "free to reach out and send some bun photos to "
+                            "me! Currently, the site doesn't have a system "
+                            "for uploading photos yourself, but if you're "
+                            "interested in this, shoot me a message."
                         ),
                         p.h2("How are you making money?"),
                         p.p(
-                            "I'm not. I made this project for fun, and have no "
-                            "intention of monetizing it. However, if you want to "
-                            "support my work, I'd love if you ",
-                            p.a(href="https://buymeacoffee.com/maddyguthridge")(
-                                "buy me a bowl of pasta"
-                            ),
+                            "I'm not. I made this project for fun, and have "
+                            "no intention of monetizing it. However, if you "
+                            "want to support my work, I'd love if you ",
+                            p.a(
+                                href="https://buymeacoffee.com/maddyguthridge"
+                            )("buy me a bowl of pasta"),
                             ". No pressure, of course!",
                         ),
                         p.h2("Are you tracking and selling my data?"),
@@ -224,7 +246,7 @@ def about_page():
 
 @app.get("/coverage")
 def coverage():
-    coverage_times = []
+    coverage_times: list[p.tr] = []
     degree_discrepancies: list[int] = []
     for hour in range(1, 13):
         for minute in range(0, 60, 5):
@@ -254,8 +276,12 @@ def coverage():
 
             coverage_times.append(
                 p.tr(
-                    p.td(style=f"background-color: {bg_time}")(f"{hour}:{minute:02}"),
-                    p.td(style=f"background-color: {bg_num_buns}")(f"{num_buns}"),
+                    p.td(style=f"background-color: {bg_time}")(
+                        f"{hour}:{minute:02}"
+                    ),
+                    p.td(style=f"background-color: {bg_num_buns}")(
+                        f"{num_buns}"
+                    ),
                     p.td(style=f"background-color: {bg_closest_buns}")(
                         f"{closest_bun}"
                     ),
@@ -272,7 +298,9 @@ def coverage():
             p.body(
                 p.main(
                     p.h1("Coverage -", p.a(href="/")("Bnuuy Time")),
-                    p.p(f"Mean angle discrepancy: {average_discrepancy:.0f}deg"),
+                    p.p(
+                        f"Mean angle discrepancy: {average_discrepancy:.0f}deg"
+                    ),
                     p.table(
                         p.thead(
                             p.tr(
@@ -318,7 +346,9 @@ def at_time(time_str: str):
     else:
         bun = find_matching_bun(parsed)
         if bun is None:
-            return str(error_page(f"No matching buns at {format_time(parsed)} :("))
+            return str(
+                error_page(f"No matching buns at {format_time(parsed)} :(")
+            )
         return bnuuy_time(bun, parsed)
 
 
@@ -327,7 +357,9 @@ def from_region(region: str, location: str):
     try:
         now = now_in_tz(ZoneInfo(f"{region}/{location}"))
     except ZoneInfoNotFoundError:
-        return error_page(f"The time zone '{region}/{location}' does not exist")
+        return error_page(
+            f"The time zone '{region}/{location}' does not exist"
+        )
     bun = find_matching_bun(now)
     if bun is None:
         return error_page(f"No matching buns at {format_time(now)} :(")
