@@ -37,7 +37,7 @@ jobs:
         # Latest compatible Python
         python-version-file: "pyproject.toml"
     - name: Install uv
-      uses: astral-sh/setup-uv@v6
+      uses: astral-sh/setup-uv@v7
       with:
         enable-cache: true
     - name: Test with pytest
@@ -68,7 +68,7 @@ jobs:
         # Latest compatible Python
         python-version-file: "pyproject.toml"
     - name: Install uv
-      uses: astral-sh/setup-uv@v6
+      uses: astral-sh/setup-uv@v7
       with:
         enable-cache: true
     - name: Lint with ruff
@@ -86,7 +86,7 @@ jobs:
         # Latest compatible Python
         python-version-file: "pyproject.toml"
     - name: Install uv
-      uses: astral-sh/setup-uv@v6
+      uses: astral-sh/setup-uv@v7
       with:
         enable-cache: true
     - name: Type-check with mypy
