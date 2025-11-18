@@ -6,8 +6,8 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "flask>=3.1.0",
+    "granian>=2.6.0",
     "pyhtml-enhanced>=2.2.4",
-    "uwsgi>=2.0.29",
 ]
 
 [dependency-groups]
@@ -17,9 +17,6 @@ dev = [
     "pytest>=8.3.5",
     "ruff>=0.12.3",
 ]
-
-[tool.uv.extra-build-dependencies]
-"uwsgi-2.0.29" = ["setuptools"]
 
 [tool.mypy]
 check_untyped_defs = true

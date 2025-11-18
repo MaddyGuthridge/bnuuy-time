@@ -1,5 +1,5 @@
 # Dockerfile, used to build into an easily-deployed image
-# Source: https://medium.com/@albertazzir/blazing-fast-python-docker-builds-with-poetry-a78a66f5aed0
+# Derived from: https://medium.com/@albertazzir/blazing-fast-python-docker-builds-with-poetry-a78a66f5aed0
 
 # The builder image, used to build the virtual environment
 FROM python:3.14-bookworm AS builder
@@ -33,9 +33,6 @@ COPY bnuuy_time ./bnuuy_time
 
 COPY buns.json ./
 
-COPY uwsgi.ini ./
-
 EXPOSE 8000
-EXPOSE 9000
 
-ENTRYPOINT ["sleep", "infinity"]
+ENTRYPOINT ["granian", "--interface", "wsgi", "--host", "0.0.0.0", "bnuuy_time.server:app"]
