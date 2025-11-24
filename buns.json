@@ -1032,5 +1032,57 @@
     "right_ear": 217,
     "focus_x": 0.5,
     "focus_y": 0.5
+  },
+  {
+    "filename": "pancake/4pm.jpeg",
+    "name": "Pancake",
+    "source": {
+      "platform": "Tiktok",
+      "author": "@lifewithpancakethebun",
+      "url": "https://www.tiktok.com/@lifewithpancakethebun"
+    },
+    "left_ear": 140,
+    "right_ear": 2,
+    "focus_x": 0.5,
+    "focus_y": 0.5
+  },
+  {
+    "filename": "pancake/4pm-2.jpeg",
+    "name": "Pancake",
+    "source": {
+      "platform": "Tiktok",
+      "author": "@lifewithpancakethebun",
+      "url": "https://www.tiktok.com/@lifewithpancakethebun"
+    },
+    "left_ear": 140,
+    "right_ear": 2,
+    "focus_x": 0.5,
+    "focus_y": 0.35
+  },
+  {
+    "filename": "pancake/11-10.jpeg",
+    "name": "Pancake",
+    "source": {
+      "platform": "Tiktok",
+      "author": "@lifewithpancakethebun",
+      "url": "https://www.tiktok.com/@lifewithpancakethebun"
+    },
+    "left_ear": 45,
+    "right_ear": 350,
+    "focus_x": 0.5,
+    "focus_y": 0.42
+  },
+  {
+    "filename": "pancake/aeroplane.jpeg",
+    "name": "Pancake",
+    "source": {
+      "platform": "Tiktok",
+      "author": "@lifewithpancakethebun",
+      "url": "https://www.tiktok.com/@lifewithpancakethebun"
+    },
+    "left_ear": 85,
+    "right_ear": 275,
+    "focus_x": 0.5,
+    "focus_y": 0.6
   }
 ]
