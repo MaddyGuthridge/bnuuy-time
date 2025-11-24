@@ -25,12 +25,12 @@ app = Flask(__name__)
 platform_logos = {
     "instagram": "/static/instagram.png",
     "reddit": "/static/reddit.png",
+    "tiktok": "/static/tiktok.png",
 }
 
 
 def platform_logo(platform: str):
     platform = platform.lower()
-    print(platform)
     if platform in platform_logos:
         return p.img(
             src=platform_logos[platform.lower()], class_="platform-logo"
