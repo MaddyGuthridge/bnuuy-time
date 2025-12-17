@@ -1034,6 +1034,19 @@
     "focus_y": 0.5
   },
   {
+    "filename": "pancake/4-10.jpg",
+    "name": "Pancake",
+    "source": {
+      "platform": "Tiktok",
+      "author": "@lifewithpancakethebun",
+      "url": "https://www.tiktok.com/@lifewithpancakethebun"
+    },
+    "left_ear": 150,
+    "right_ear": 40,
+    "focus_x": 0.5,
+    "focus_y": 0.5
+  },
+  {
     "filename": "pancake/4pm.jpeg",
     "name": "Pancake",
     "source": {
