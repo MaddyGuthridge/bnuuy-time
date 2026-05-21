@@ -18,6 +18,11 @@ dev = [
     "ruff>=0.12.3",
 ]
 
+[tool.uv]
+# Exclude dependency releases newer than 1 week, in order to reduce supply-chain
+# risk.
+exclude-newer = "1 week"
+
 [tool.mypy]
 check_untyped_defs = true
 files = ["bnuuy_time", "tests"]
