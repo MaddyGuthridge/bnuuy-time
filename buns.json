@@ -908,6 +908,78 @@
     "focus_y": 0.45
   },
   {
+    "filename": "pat/may2026/hungy.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 280,
+    "right_ear": 185,
+    "focus_x": 0.43,
+    "focus_y": 0.34
+  },
+  {
+    "filename": "pat/may2026/IMG_0675.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 10,
+    "right_ear": 359,
+    "focus_x": 0.6,
+    "focus_y": 0.54
+  },
+  {
+    "filename": "pat/may2026/IMG_8810.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 130,
+    "right_ear": 20,
+    "focus_x": 0.5,
+    "focus_y": 0.52
+  },
+  {
+    "filename": "pat/may2026/IMG_8832.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 75,
+    "right_ear": 357,
+    "focus_x": 0.43,
+    "focus_y": 0.57
+  },
+  {
+    "filename": "pat/may2026/IMG_8833.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 75,
+    "right_ear": 352,
+    "focus_x": 0.45,
+    "focus_y": 0.57
+  },
+  {
+    "filename": "pat/may2026/IMG_8911.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 355,
+    "right_ear": 330,
+    "focus_x": 0.53,
+    "focus_y": 0.59
+  },
+  {
+    "filename": "pat/may2026/IMG_8924.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 170,
+    "right_ear": 10,
+    "focus_x": 0.5,
+    "focus_y": 0.52
+  },
+  {
+    "filename": "pat/may2026/snoot.JPG",
+    "name": null,
+    "source": null,
+    "left_ear": 20,
+    "right_ear": 170,
+    "focus_x": 0.6,
+    "focus_y": 0.33
+  },
+  {
     "filename": "jeicam/daisy.jpg",
     "name": "Daisy",
     "source": {

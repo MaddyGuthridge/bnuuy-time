@@ -16,12 +16,12 @@ RUN uv sync --no-dev
 # The runtime image, used to just run the code provided its virtual environment
 FROM python:3.14-bookworm AS runtime
 
-RUN useradd -ms /bin/bash uwsgi
+RUN useradd -ms /bin/bash granian
 
-# Make /data dir be owned by uwsgi
+# Make /data dir be owned by granian
 
-WORKDIR /home/uwsgi
-USER uwsgi
+WORKDIR /home/granian
+USER granian
 RUN mkdir data
 
 ENV VIRTUAL_ENV=/app/.venv \
