@@ -15,7 +15,7 @@ dev = [
     "coverage>=7.9.2",
     "mypy>=1.16.1",
     "pytest>=9.0.3",
-    "ruff>=0.12.3",
+    "ruff>=0.15.19",
 ]
 
 [tool.uv]
