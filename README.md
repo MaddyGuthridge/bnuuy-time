@@ -1,11 +1,8 @@
-# Bnuuy Time
+# bnuuy.date
 
 Bnuuy says what time it is.
 
-[bnuuy-time.maddyguthridge.com](https://bnuuy-time.maddyguthridge.com)
-
-Currently, only about 45% of times have a corresponding bunny. If you have a
-bunny and want to help rectify this disastrous situation, please reach out.
+[bnuuy.date](https://bnuuy.date)
 
 ## Running
 
