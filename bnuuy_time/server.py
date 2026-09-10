@@ -43,7 +43,7 @@ def generate_head(
     title: str | None,
     extra_css: list[str],
 ):
-    title = f"{title} - Bnuuy Time" if title else "Bnuuy time"
+    title = f"{title} - bnuuy.date" if title else "bnuuy.date"
     return p.head(
         p.title(title),
         p.link(rel="stylesheet", href="/static/root.css"),
@@ -57,7 +57,7 @@ def generate_head(
         ),
         p.meta(
             name="keywords",
-            content="clock, time, bunny, rabbit, Maddy Guthridge",
+            content="clock, time, date, bunny, rabbit, Maddy Guthridge",
         ),
         p.meta(name="author", content="Maddy Guthridge"),
         p.meta(
@@ -70,7 +70,7 @@ def generate_head(
 
 def top_links():
     return p.header(class_="shadow")(
-        p.span("Bnuuy Time"),
+        p.span("bnuuy.date"),
         p.span(class_="hide-mobile")("•"),
         p.span(class_="hide-mobile")(
             p.a(href="https://maddyguthridge.com")(
@@ -84,6 +84,7 @@ def top_links():
 
 def bnuuy_time(bun: BunDefinition, time: datetime):
     t = format_time(time)
+    date = time.strftime("%A %B %d, %Y")
 
     name = bun["name"]
     if name is None:
@@ -140,6 +141,7 @@ def bnuuy_time(bun: BunDefinition, time: datetime):
                             f"{name} {time_adjective}",
                             p.span(class_="no-wrap")(t),
                         ),
+                        p.h2(class_="shadow")(date),
                         p.span(class_="shadow")("Credit: ", credits)
                         if credits
                         else [],
@@ -169,7 +171,7 @@ def redirect_with_tz():
         p.html(
             generate_head(None, []),
             p.body(
-                p.h1("Bnuuy time"),
+                p.h1("bnuuy.date"),
                 p.p("Redirecting to your time zone..."),
                 p.script(src="/static/tz_redirect.js"),
             ),
@@ -185,7 +187,7 @@ def about_page():
             generate_head("About", ["/static/about.css"]),
             p.body(
                 p.main(
-                    p.h1("About -", p.a(href="/")("Bnuuy Time")),
+                    p.h1("About -", p.a(href="/")("bnuuy.date")),
                     p.article(
                         p.p(
                             "This website is a collection of rabbit photos, "
@@ -297,7 +299,7 @@ def coverage():
             ),
             p.body(
                 p.main(
-                    p.h1("Coverage -", p.a(href="/")("Bnuuy Time")),
+                    p.h1("Coverage -", p.a(href="/")("bnuuy.date")),
                     p.p(
                         f"Mean angle discrepancy: {average_discrepancy:.0f}deg"
                     ),
